@@ -1,3 +1,8 @@
+Eduard Ruffert: copied from emily bach
+
+
+
+###########
 Requirements:
 - CMake
 - CppUnit
