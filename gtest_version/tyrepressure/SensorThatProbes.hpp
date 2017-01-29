@@ -13,9 +13,9 @@
 #endif //TYREPRESSURE_SENSOR_H
 
 
-class MockSensor : public Sensor {
+class SensorThatProbes : public Sensor {
 public:
-    MockSensor(double _value) : value(_value) {}
+    SensorThatProbes(double _value) : value(_value) {}
 
     double popNextPressurePsiValue() {
         return value;
