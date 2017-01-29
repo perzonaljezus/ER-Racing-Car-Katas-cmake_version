@@ -1,6 +1,9 @@
 #ifndef TYREPRESSURE_ALARM_H
 #define TYREPRESSURE_ALARM_H
 
+static const int MAX_TYRE_PRESSURE = 21;
+static const int MIN_TYRE_PRESSURE = 17;
+
 #include "Sensor.hpp"
 
 class Alarm
@@ -12,9 +15,9 @@ public:
 
 protected:
     Sensor m_sensor;
+    bool m_alarmOn;
     double m_lowPressureTreshold;
     double m_highPressureTreshold;
-    bool m_alarmOn;
 
     virtual double probePressure();
 };

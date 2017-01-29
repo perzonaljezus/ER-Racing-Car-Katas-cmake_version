@@ -4,8 +4,9 @@
 
 #include "FakeAlarm.h"
 
-FakeAlarm::FakeAlarm(double _pressure) {
-     pressure = _pressure;
+FakeAlarm::FakeAlarm(double _pressure)
+{
+    pressure = _pressure;
 }
 
 double FakeAlarm::probePressure() {

@@ -6,7 +6,7 @@ using namespace ::testing;
 
 TEST(Alarm, alarmIsOnWhenPressureIsTooHigh)
 {
-    int tooHighPressure = 22; // Alarm.highPressureThreshold+1
+    double tooHighPressure = MAX_TYRE_PRESSURE+1;
     FakeAlarm *alarm = new FakeAlarm(tooHighPressure);
     alarm->check();
     ASSERT_EQ(true, alarm->isAlarmOn());

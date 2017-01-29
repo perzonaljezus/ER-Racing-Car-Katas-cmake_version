@@ -14,6 +14,7 @@ public:
     FakeAlarm(double pressure);
     double probePressure();
 
+protected:
     double pressure;
 };
 
