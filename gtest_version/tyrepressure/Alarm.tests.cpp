@@ -3,8 +3,13 @@
 
 using namespace ::testing;
 
-TEST(Alarm, Foobar)
+TEST(Alarm, alarmIsOnWhenPressureIsTooHigh)
 {
-    Alarm *alarm = new Alarm();
+    int tooHightPressure = 22; // Alarm.highPressureThreshold+1
+    Alarm *alarm = new Alarm(tooHightPressure);
+    alarm->check();
     ASSERT_EQ(true, alarm->isAlarmOn());
 }
+
+// todo: alarm is on, when pressure is too low
+// todo: alarm is off, when pressure is ok
