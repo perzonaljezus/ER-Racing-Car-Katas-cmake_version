@@ -8,11 +8,13 @@ void Alarm::check()
 {
     double psiPressureValue = probePressure();
 
-    if (psiPressureValue < m_lowPressureTreshold || m_highPressureTreshold < psiPressureValue)
+    if (isNotInSafetyRange(psiPressureValue))
     {
         m_alarmOn = true;
     }
 }
+
+bool Alarm::isNotInSafetyRange(double psiPressureValue) const { return psiPressureValue < m_lowPressureTreshold || m_highPressureTreshold < psiPressureValue; }
 
 double Alarm::probePressure() { return m_sensor.popNextPressurePsiValue(); }
 

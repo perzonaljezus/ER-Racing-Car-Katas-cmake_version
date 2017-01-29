@@ -20,6 +20,8 @@ protected:
     double m_highPressureTreshold;
 
     virtual double probePressure();
+
+    bool isNotInSafetyRange(double psiPressureValue) const;
 };
 
 #endif
