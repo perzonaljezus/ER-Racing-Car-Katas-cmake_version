@@ -1,11 +1,7 @@
 
 #include "Alarm.hpp"
 
-Alarm::Alarm()  : m_sensor(), m_lowPressureTreshold(MIN_TYRE_PRESSURE), m_highPressureTreshold(MAX_TYRE_PRESSURE), m_alarmOn(false)
-{
-}
-
-Alarm::Alarm(Sensor *sensor) : m_sensor(*sensor), m_lowPressureTreshold(MIN_TYRE_PRESSURE), m_highPressureTreshold(MAX_TYRE_PRESSURE), m_alarmOn(false)
+Alarm::Alarm(Sensor *sensor) : m_sensor(sensor), m_lowPressureTreshold(MIN_TYRE_PRESSURE), m_highPressureTreshold(MAX_TYRE_PRESSURE), m_alarmOn(false)
 {
 }
 
@@ -23,7 +19,7 @@ bool Alarm::isInSafetyRange(double psiPressureValue) const {
     return m_lowPressureTreshold <= psiPressureValue && psiPressureValue <= m_highPressureTreshold;
 }
 
-double Alarm::probePressure() { return m_sensor.popNextPressurePsiValue(); }
+double Alarm::probePressure() { return m_sensor->popNextPressurePsiValue(); }
 
 bool Alarm::isAlarmOn()
 {
