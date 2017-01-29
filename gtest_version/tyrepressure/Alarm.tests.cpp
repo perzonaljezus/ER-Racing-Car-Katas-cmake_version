@@ -27,11 +27,3 @@ TEST(Alarm, alarmIsOnWhenPressureIsOk) {
     alarm->check();
     ASSERT_FALSE(alarm->isAlarmOn());
 }
-
-TEST(Alarm, collaborateWithAnInjectedSensor) {
-    double testPressure = (MIN_TYRE_PRESSURE + MAX_TYRE_PRESSURE) / 2; // mean of range, should be ok
-    Sensor *sensor = new MockSensor(testPressure);
-    Alarm *alarm = new Alarm(sensor);
-    alarm->check();
-    ASSERT_FALSE(alarm->isAlarmOn());
-}
