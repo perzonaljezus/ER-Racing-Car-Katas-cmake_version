@@ -1,12 +1,13 @@
-#include "Alarm.hpp"
 #include <gmock/gmock.h>
+#include "Alarm.hpp"
+#include "FakeAlarm.h"
 
 using namespace ::testing;
 
 TEST(Alarm, alarmIsOnWhenPressureIsTooHigh)
 {
-    int tooHightPressure = 22; // Alarm.highPressureThreshold+1
-    Alarm *alarm = new Alarm(tooHightPressure);
+    int tooHighPressure = 22; // Alarm.highPressureThreshold+1
+    FakeAlarm *alarm = new FakeAlarm(tooHighPressure);
     alarm->check();
     ASSERT_EQ(true, alarm->isAlarmOn());
 }

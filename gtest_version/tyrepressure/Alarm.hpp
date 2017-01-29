@@ -1,3 +1,5 @@
+#ifndef TYREPRESSURE_ALARM_H
+#define TYREPRESSURE_ALARM_H
 
 #include "Sensor.hpp"
 
@@ -13,4 +15,8 @@ protected:
     double m_lowPressureTreshold;
     double m_highPressureTreshold;
     bool m_alarmOn;
+
+    virtual double probePressure();
 };
+
+#endif
