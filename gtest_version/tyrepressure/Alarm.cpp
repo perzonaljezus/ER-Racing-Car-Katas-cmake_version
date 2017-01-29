@@ -1,8 +1,13 @@
 
 #include "Alarm.hpp"
 
-Alarm::Alarm() : m_sensor(), m_lowPressureTreshold(MIN_TYRE_PRESSURE), m_highPressureTreshold(MAX_TYRE_PRESSURE), m_alarmOn(false)
-{}
+Alarm::Alarm()  : m_sensor(), m_lowPressureTreshold(MIN_TYRE_PRESSURE), m_highPressureTreshold(MAX_TYRE_PRESSURE), m_alarmOn(false)
+{
+}
+
+Alarm::Alarm(Sensor *sensor) : m_sensor(*sensor), m_lowPressureTreshold(MIN_TYRE_PRESSURE), m_highPressureTreshold(MAX_TYRE_PRESSURE), m_alarmOn(false)
+{
+}
 
 void Alarm::check()
 {

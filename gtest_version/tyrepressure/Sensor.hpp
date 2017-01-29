@@ -3,5 +3,5 @@ class Sensor
 {
 public:
     Sensor();
-    double popNextPressurePsiValue();    
+    virtual double popNextPressurePsiValue();
 };
