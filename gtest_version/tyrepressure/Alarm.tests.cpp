@@ -6,11 +6,24 @@ using namespace ::testing;
 
 TEST(Alarm, alarmIsOnWhenPressureIsTooHigh)
 {
-    double tooHighPressure = MAX_TYRE_PRESSURE+1;
-    FakeAlarm *alarm = new FakeAlarm(tooHighPressure);
+    double testPressure = MAX_TYRE_PRESSURE + 1;
+    FakeAlarm *alarm = new FakeAlarm(testPressure);
     alarm->check();
-    ASSERT_EQ(true, alarm->isAlarmOn());
+    ASSERT_TRUE(alarm->isAlarmOn());
 }
 
-// todo: alarm is on, when pressure is too low
-// todo: alarm is off, when pressure is ok
+TEST(Alarm, alarmIsOnWhenPressureIsTooLow)
+{
+    double testPressure = MIN_TYRE_PRESSURE - 1;
+    FakeAlarm *alarm = new FakeAlarm(testPressure);
+    alarm->check();
+    ASSERT_TRUE(alarm->isAlarmOn());
+}
+
+TEST(Alarm, alarmIsOnWhenPressureIsOk)
+{
+    double testPressure = (MIN_TYRE_PRESSURE + MAX_TYRE_PRESSURE)/2; // mean of range, should be ok
+    FakeAlarm *alarm = new FakeAlarm(testPressure);
+    alarm->check();
+    ASSERT_FALSE(alarm->isAlarmOn());
+}

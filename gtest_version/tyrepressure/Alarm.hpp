@@ -1,8 +1,8 @@
 #ifndef TYREPRESSURE_ALARM_H
 #define TYREPRESSURE_ALARM_H
 
-static const int MAX_TYRE_PRESSURE = 21;
-static const int MIN_TYRE_PRESSURE = 17;
+static const double MAX_TYRE_PRESSURE = 21.;
+static const double MIN_TYRE_PRESSURE = 17.;
 
 #include "Sensor.hpp"
 
