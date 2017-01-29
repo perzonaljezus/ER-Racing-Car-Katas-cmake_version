@@ -21,7 +21,7 @@ protected:
 
     virtual double probePressure();
 
-    bool isNotInSafetyRange(double psiPressureValue) const;
+    bool isInSafetyRange(double psiPressureValue) const;
 };
 
 #endif
