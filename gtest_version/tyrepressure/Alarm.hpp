@@ -20,8 +20,6 @@ protected:
     SafetyRange *m_safetyRange;
     Sensor *m_sensor;
     bool m_alarmOn;
-    double m_lowPressureTreshold;
-    double m_highPressureTreshold;
 
     double probePressure();
 
