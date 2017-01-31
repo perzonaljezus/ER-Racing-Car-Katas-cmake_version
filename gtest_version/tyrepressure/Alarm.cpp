@@ -1,5 +1,6 @@
 
 #include "Alarm.hpp"
+#include "SafetyRange.h"
 
 Alarm::Alarm(Sensor *sensor) : m_sensor(sensor), m_lowPressureTreshold(MIN_TYRE_PRESSURE), m_highPressureTreshold(MAX_TYRE_PRESSURE), m_alarmOn(false)
 {

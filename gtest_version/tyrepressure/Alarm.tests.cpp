@@ -1,6 +1,7 @@
 #include <gmock/gmock.h>
 #include "Alarm.hpp"
 #include "SensorThatProbes.hpp"
+#include "SafetyRange.h"
 
 using namespace ::testing;
 
