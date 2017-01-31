@@ -13,6 +13,7 @@ public:
 
     double getHighThreshold() const;
     double getLowThreshold() const;
+    double getMeanThreshold() const;
 
 protected:
     double m_highPressureTreshold;

@@ -22,3 +22,7 @@ double SafetyRange::getHighThreshold() const {
 double SafetyRange::getLowThreshold() const {
     return m_lowPressureTreshold;
 }
+
+double SafetyRange::getMeanThreshold() const {
+    return (m_lowPressureTreshold + m_highPressureTreshold) / 2;
+}
