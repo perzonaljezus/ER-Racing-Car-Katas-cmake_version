@@ -11,8 +11,8 @@ public:
 
     bool isInSafetyRange (double psiPressureValue) const;
 
-    double getMaxPressure() const;
-    double getMinPressure() const;
+    double getHighThreshold() const;
+    double getLowThreshold() const;
 
 protected:
     double m_highPressureTreshold;

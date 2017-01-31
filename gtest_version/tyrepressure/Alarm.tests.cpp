@@ -6,7 +6,7 @@ using namespace ::testing;
 
 TEST(Alarm, alarmIsOnWhenPressureIsTooHigh) {
     SafetyRange *safetyRange = new SafetyRange();
-    double testPressure = safetyRange->getMaxPressure() + 1;
+    double testPressure = safetyRange->getHighThreshold() + 1;
     Sensor *sensor = new SensorThatProbes(testPressure);
     Alarm *alarm = new Alarm(sensor, safetyRange);
     alarm->check();
@@ -15,7 +15,7 @@ TEST(Alarm, alarmIsOnWhenPressureIsTooHigh) {
 
 TEST(Alarm, alarmIsOnWhenPressureIsTooLow) {
     SafetyRange *safetyRange = new SafetyRange();
-    double testPressure = safetyRange->getMinPressure() - 1;
+    double testPressure = safetyRange->getLowThreshold() - 1;
     Sensor *sensor = new SensorThatProbes(testPressure);
     Alarm *alarm = new Alarm(sensor, safetyRange);
     alarm->check();
@@ -24,7 +24,7 @@ TEST(Alarm, alarmIsOnWhenPressureIsTooLow) {
 
 TEST(Alarm, alarmIsOnWhenPressureIsOk) {
     SafetyRange *safetyRange = new SafetyRange();
-    double testPressure = (safetyRange->getMinPressure() + safetyRange->getMaxPressure()) / 2; // mean of range, should be ok
+    double testPressure = (safetyRange->getLowThreshold() + safetyRange->getHighThreshold()) / 2; // mean of range, should be ok
     Sensor *sensor = new SensorThatProbes(testPressure);
     Alarm *alarm = new Alarm(sensor, safetyRange);
     alarm->check();

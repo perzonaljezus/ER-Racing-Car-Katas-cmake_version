@@ -15,10 +15,10 @@ bool SafetyRange::isInSafetyRange(double psiPressureValue) const {
     return m_lowPressureTreshold <= psiPressureValue && psiPressureValue <= m_highPressureTreshold;
 }
 
-double SafetyRange::getMaxPressure() const {
+double SafetyRange::getHighThreshold() const {
     return m_highPressureTreshold;
 }
 
-double SafetyRange::getMinPressure() const {
+double SafetyRange::getLowThreshold() const {
     return m_lowPressureTreshold;
 }
