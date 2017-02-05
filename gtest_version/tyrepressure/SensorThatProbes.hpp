@@ -2,18 +2,13 @@
 // Created by Eduard Ruffert on 29/01/17.
 //
 
-#ifndef TYREPRESSURE_MOCKSENSOR_H
-#define TYREPRESSURE_MOCKSENSOR_H
 
 #ifndef TYREPRESSURE_SENSOR_H
 #define TYREPRESSURE_SENSOR_H
 
-#include "Sensor.hpp"
+#include "TelemetryPressureSensor.hpp"
 
-#endif //TYREPRESSURE_SENSOR_H
-
-
-class SensorThatProbes : public Sensor {
+class SensorThatProbes : public TelemetryPressureSensor {
 public:
     SensorThatProbes(double _value) : value(_value) {}
 
@@ -25,5 +20,4 @@ protected:
     double value;
 };
 
-
-#endif //TYREPRESSURE_MOCKSENSOR_H
+#endif //TYREPRESSURE_SENSOR_H

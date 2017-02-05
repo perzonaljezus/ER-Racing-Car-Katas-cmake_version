@@ -1,8 +1,7 @@
 
 #include "Alarm.hpp"
-#include "SafetyRange.hpp"
 
-Alarm::Alarm(Sensor *sensor, SafetyRange *safetyRange) : m_sensor(sensor), m_safetyRange(safetyRange),  m_alarmOn(false)
+Alarm::Alarm(TelemetryPressureSensor *sensor, SafetyRange *safetyRange) : m_sensor(sensor), m_safetyRange(safetyRange),  m_alarmOn(false)
 {
 }
 

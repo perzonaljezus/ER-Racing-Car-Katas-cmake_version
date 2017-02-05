@@ -2,7 +2,6 @@
 // Created by Eduard Ruffert on 31/01/17.
 //
 
-#include "Alarm.hpp"
 #include "SafetyRange.hpp"
 
 SafetyRange::SafetyRange()
