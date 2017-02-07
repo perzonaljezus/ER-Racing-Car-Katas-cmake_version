@@ -13,6 +13,13 @@ public:
     static AlarmBuilder *anAlarm() {
         return new AlarmBuilder();
     }
+
+    AlarmBuilder *usingSensor(ISensor *sensor) {
+        this->sensor = sensor;
+        return this;
+    }
+protected:
+    ISensor *sensor;
 };
 
 
