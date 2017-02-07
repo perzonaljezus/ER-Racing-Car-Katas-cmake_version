@@ -18,8 +18,15 @@ public:
         this->sensor = sensor;
         return this;
     }
+
+    AlarmBuilder *andWithSafetyRange(SafetyRange *safetyRange) {
+        this->safetyRange = safetyRange;
+        return this;
+    }
+
 protected:
     ISensor *sensor;
+    SafetyRange *safetyRange;
 };
 
 
