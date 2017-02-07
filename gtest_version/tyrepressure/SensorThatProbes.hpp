@@ -12,7 +12,7 @@ class SensorThatProbes : public TelemetryPressureSensor {
 public:
     SensorThatProbes(double _value) : value(_value) {}
 
-    double popNextPressurePsiValue() {
+    double probe() {
         return value;
     }
 

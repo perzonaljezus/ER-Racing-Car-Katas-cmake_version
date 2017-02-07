@@ -18,7 +18,6 @@ protected:
     ISensor *m_sensor;
     bool m_alarmOn;
 
-    double probePressure();
 };
 
 #endif //TYREPRESSURE_ALARM_H

@@ -5,9 +5,14 @@
 #ifndef TYREPRESSURE_TELEMETRYPRESSURESENSOR_H
 #define TYREPRESSURE_TELEMETRYPRESSURESENSOR_H
 
+#include "Sensor.hpp"
 #include "ISensor.hpp"
 
-class TelemetryPressureSensor : public ISensor {
+class TelemetryPressureSensor : public Sensor, public ISensor {
+public:
+    double probe() {
+        return Sensor::popNextPressurePsiValue();
+    }
 
 };
 

@@ -7,15 +7,13 @@ Alarm::Alarm(ISensor *sensor, SafetyRange *safetyRange) : m_sensor(sensor), m_sa
 
 void Alarm::check()
 {
-    double psiPressureValue = probePressure();
+    double psiPressureValue = m_sensor->probe();
 
     if ( ! m_safetyRange->isInSafetyRange(psiPressureValue))
     {
         m_alarmOn = true;
     }
 }
-
-double Alarm::probePressure() { return m_sensor->popNextPressurePsiValue(); }
 
 bool Alarm::isAlarmOn()
 {

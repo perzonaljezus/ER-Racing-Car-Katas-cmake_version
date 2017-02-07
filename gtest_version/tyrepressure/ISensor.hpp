@@ -8,7 +8,7 @@
 
 class ISensor {
 public:
-    virtual double popNextPressurePsiValue() = 0;
+    virtual double probe() = 0;
 };
 
 
