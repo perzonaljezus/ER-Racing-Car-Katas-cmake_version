@@ -8,14 +8,14 @@
 class Alarm
 {
 public:
-    Alarm(TelemetryPressureSensor *sensor, SafetyRange *safetyRange);
+    Alarm(ISensor *sensor, SafetyRange *safetyRange);
 
     void check();
     bool isAlarmOn();
 
 protected:
     SafetyRange *m_safetyRange;
-    TelemetryPressureSensor *m_sensor;
+    ISensor *m_sensor;
     bool m_alarmOn;
 
     double probePressure();

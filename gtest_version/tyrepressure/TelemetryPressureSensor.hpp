@@ -5,9 +5,9 @@
 #ifndef TYREPRESSURE_TELEMETRYPRESSURESENSOR_H
 #define TYREPRESSURE_TELEMETRYPRESSURESENSOR_H
 
-#include "Sensor.hpp"
+#include "ISensor.hpp"
 
-class TelemetryPressureSensor : public Sensor {
+class TelemetryPressureSensor : public ISensor {
 
 };
 
