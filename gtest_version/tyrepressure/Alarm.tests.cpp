@@ -5,13 +5,14 @@
 
 using namespace ::testing;
 
+
 TEST(Alarm, alarmIsOnWhenPressureIsTooHigh) {
     SafetyRange *safetyRange = new SafetyRange();
 
     double testPressure = safetyRange->getHighThreshold() + 1;
     ISensor *sensor = new SensorThatProbes(testPressure);
 
-    alarm = AlarmBuilder::anAlarm()->
+    Alarm *alarm = AlarmBuilder::anAlarm()->
             usingSensor(sensor)->
             andWithSafetyRange(safetyRange)->
             build();

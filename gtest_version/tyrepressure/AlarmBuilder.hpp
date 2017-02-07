@@ -24,6 +24,10 @@ public:
         return this;
     }
 
+    Alarm *build() {
+        return new Alarm(sensor, safetyRange);
+    }
+
 protected:
     ISensor *sensor;
     SafetyRange *safetyRange;
