@@ -34,7 +34,7 @@ TEST(Alarm, alarmIsOnWhenPressureIsTooLow) {
     ASSERT_TRUE(alarm->isAlarmOn());
 }
 
-TEST(Alarm, alarmIsOnWhenPressureIsOk) {
+TEST(Alarm, alarmIsOnWhenPressureIsWithinSafetyRange) {
     SafetyRange *safetyRange = new SafetyRange();
     double testPressure = safetyRange->getMeanThreshold(); // mean of range, should always be ok
     ISensor *sensor = new SensorThatProbes(testPressure);
