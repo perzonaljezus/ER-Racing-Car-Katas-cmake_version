@@ -1,6 +1,7 @@
 #include <gmock/gmock.h>
 #include "SensorThatProbes.hpp"
 #include "Alarm.hpp"
+#include "AlarmBuilder.hpp"
 
 using namespace ::testing;
 
@@ -10,7 +11,7 @@ TEST(Alarm, alarmIsOnWhenPressureIsTooHigh) {
     double testPressure = safetyRange->getHighThreshold() + 1;
     ISensor *sensor = new SensorThatProbes(testPressure);
 
-    alarm = anAlarm()->
+    alarm = AlarmBuilder::anAlarm()->
             usingSensor(sensor)->
             andWithSafetyRange(safetyRange)->
             build();
