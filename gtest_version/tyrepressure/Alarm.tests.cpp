@@ -6,9 +6,15 @@ using namespace ::testing;
 
 TEST(Alarm, alarmIsOnWhenPressureIsTooHigh) {
     SafetyRange *safetyRange = new SafetyRange();
+
     double testPressure = safetyRange->getHighThreshold() + 1;
     ISensor *sensor = new SensorThatProbes(testPressure);
-    Alarm *alarm = new Alarm(sensor, safetyRange);
+
+    alarm = anAlarm()->
+            usingSensor(sensor)->
+            andWithSafetyRange(safetyRange)->
+            build();
+
     alarm->check();
     ASSERT_TRUE(alarm->isAlarmOn());
 }
