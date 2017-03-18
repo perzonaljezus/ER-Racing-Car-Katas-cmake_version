@@ -15,6 +15,11 @@ void Alarm::check()
 }
 
 double Alarm::pressureValue()  {
+    double psiPressureValue = probeValue();
+    return psiPressureValue;
+}
+
+double Alarm::probeValue() {
     double psiPressureValue = m_sensor.popNextPressurePsiValue();
     return psiPressureValue;
 }

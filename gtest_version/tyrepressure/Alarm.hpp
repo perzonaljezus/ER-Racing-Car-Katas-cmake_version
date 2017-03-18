@@ -15,4 +15,6 @@ protected:
     bool m_alarmOn;
 
     double pressureValue();
+
+    double probeValue();
 };
