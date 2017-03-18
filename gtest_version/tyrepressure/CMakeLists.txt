@@ -9,7 +9,7 @@ set(SOURCE_FILES
         Alarm.hpp
         Sensor.cpp
         Sensor.hpp
-        TestableAlarm.cpp TestableAlarm.h)
+        )
 
 add_executable(tyrepressure ${SOURCE_FILES})
 

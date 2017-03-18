@@ -1,30 +1,33 @@
 #include "Alarm.hpp"
-#include "TestableAlarm.h"
 #include <gmock/gmock.h>
 
 using namespace ::testing;
 
 TEST(Alarm, testAlarmIsOffWhenPressureIsOk)
 {
-    double okPressure = (TestableAlarm::m_highPressureTreshold + TestableAlarm::m_lowPressureTreshold)/2;
+    double okPressure = (Alarm::m_highPressureTreshold + Alarm::m_lowPressureTreshold)/2;
 
-    Sensor sensor = new Sensor();
+    Sensor* sensor = new Sensor(okPressure);
 
-    Alarm *alarm = (Alarm *) new TestableAlarm(sensor);
+    Alarm *alarm = (Alarm *) new Alarm(sensor);
     alarm->check();
     ASSERT_FALSE(alarm->isAlarmOn());
 }
 
 TEST(Alarm, testAlarmIsOnWhenPressureIsTooHigh)
 {
-    Alarm *alarm = (Alarm *) new TestableAlarm( TestableAlarm::m_highPressureTreshold +1 );
+    Sensor* sensor = new Sensor(Alarm::m_highPressureTreshold+1);
+
+    Alarm *alarm = (Alarm *) new Alarm( sensor );
     alarm->check();
     ASSERT_TRUE(alarm->isAlarmOn());
 }
 
 TEST(Alarm, testAlarmIsOnWhenPressureIsTooLow)
 {
-    Alarm *alarm = (Alarm *) new TestableAlarm( TestableAlarm::m_lowPressureTreshold -1 );
+    Sensor* sensor = new Sensor(Alarm::m_lowPressureTreshold-1);
+
+    Alarm *alarm = (Alarm *) new Alarm( sensor );
     alarm->check();
     ASSERT_TRUE(alarm->isAlarmOn());
 }

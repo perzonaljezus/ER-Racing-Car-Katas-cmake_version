@@ -7,6 +7,9 @@ class Alarm
 {
 public:
     Alarm();
+
+    Alarm(Sensor* sensor);
+
     void check();
     bool isAlarmOn();
 
@@ -14,7 +17,7 @@ public:
     static double m_highPressureTreshold;
 
 protected:
-    Sensor m_sensor;
+    Sensor* m_sensor;
     bool m_alarmOn;
 
     virtual double pressureValue();

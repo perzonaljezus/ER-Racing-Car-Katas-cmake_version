@@ -23,11 +23,15 @@ double Alarm::pressureValue()  {
 }
 
 double Alarm::probeValue() {
-    double psiPressureValue = m_sensor.popNextPressurePsiValue();
+    double psiPressureValue = m_sensor->popNextPressurePsiValue();
     return psiPressureValue;
 }
 
 bool Alarm::isAlarmOn()
 {
     return m_alarmOn;
+}
+
+Alarm::Alarm(Sensor* sensor) {
+    m_sensor = sensor;
 }
