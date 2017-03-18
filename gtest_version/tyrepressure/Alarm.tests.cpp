@@ -8,7 +8,9 @@ TEST(Alarm, testAlarmIsOffWhenPressureIsOk)
 {
     double okPressure = (TestableAlarm::m_highPressureTreshold + TestableAlarm::m_lowPressureTreshold)/2;
 
-    Alarm *alarm = (Alarm *) new TestableAlarm(okPressure);
+    Sensor sensor = new Sensor();
+
+    Alarm *alarm = (Alarm *) new TestableAlarm(sensor);
     alarm->check();
     ASSERT_FALSE(alarm->isAlarmOn());
 }
