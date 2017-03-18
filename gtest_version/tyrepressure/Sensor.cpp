@@ -13,6 +13,8 @@ double Sensor::popNextPressurePsiValue()
 {
     // placeholder implementation that simulates a real sensor 
     // in a real tire
+    float randMAx = RAND_MAX;
+    int randNum = rand();
     double pressure = 16 + (float)rand()/((float)RAND_MAX/(6));
     return pressure;
 }
