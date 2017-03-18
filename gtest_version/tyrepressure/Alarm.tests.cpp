@@ -3,9 +3,9 @@
 
 using namespace ::testing;
 
-TEST(Alarm, Foobar)
+TEST(Alarm, testAlarmIsOffWhenPressureIsOk)
 {
-    Alarm *alarm = new Alarm();
+    Alarm *alarm = new TestableAlarm();
     alarm->check();
-    ASSERT_EQ(true, alarm->isAlarmOn());
+    ASSERT_FALSE(alarm->isAlarmOn());
 }
