@@ -13,6 +13,10 @@ class TestableAlarm : protected Alarm {
 protected:
     double pressureValue();
 
+public:
+    TestableAlarm(double pressure);
+
+    double pressure;
 };
 
 

@@ -5,5 +5,10 @@
 #include "TestableAlarm.h"
 
 double TestableAlarm::pressureValue() {
-    return 20. ;
+    return pressure ;
+}
+
+TestableAlarm::TestableAlarm(double pressure) : Alarm() {
+    this->pressure = pressure;
+
 }

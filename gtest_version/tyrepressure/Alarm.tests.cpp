@@ -15,5 +15,5 @@ TEST(Alarm, testAlarmIsOffWhenPressureIsTooHigh)
 {
     Alarm *alarm = (Alarm *) new TestableAlarm(22. );
     alarm->check();
-    ASSERT_FALSE(alarm->isAlarmOn());
+    ASSERT_TRUE(alarm->isAlarmOn());
 }
