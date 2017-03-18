@@ -8,7 +8,7 @@
 
 #include "Alarm.hpp"
 
-class TestableAlarm : protected Alarm {
+class TestableAlarm : public Alarm {
 
 protected:
     double pressureValue();

@@ -1,8 +1,11 @@
 
 #include "Alarm.hpp"
 
-Alarm::Alarm() : m_sensor(), m_lowPressureTreshold(17), m_highPressureTreshold(21), m_alarmOn(false)
+Alarm::Alarm() : m_sensor(),  m_alarmOn(false)
 {}
+
+double Alarm::m_lowPressureTreshold = 17. ;
+double Alarm::m_highPressureTreshold = 21. ;
 
 void Alarm::check()
 {

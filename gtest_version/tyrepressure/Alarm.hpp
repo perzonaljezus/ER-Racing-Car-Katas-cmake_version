@@ -10,10 +10,11 @@ public:
     void check();
     bool isAlarmOn();
 
+    static double m_lowPressureTreshold;
+    static double m_highPressureTreshold;
+
 protected:
     Sensor m_sensor;
-    double m_lowPressureTreshold;
-    double m_highPressureTreshold;
     bool m_alarmOn;
 
     virtual double pressureValue();
