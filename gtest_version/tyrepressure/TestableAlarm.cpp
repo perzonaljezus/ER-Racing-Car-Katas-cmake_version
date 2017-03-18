@@ -3,3 +3,7 @@
 //
 
 #include "TestableAlarm.h"
+
+double TestableAlarm::pressureValue() {
+    return 20. ;
+}
