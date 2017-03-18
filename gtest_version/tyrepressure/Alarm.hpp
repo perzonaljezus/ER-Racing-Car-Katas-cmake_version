@@ -13,4 +13,6 @@ protected:
     double m_lowPressureTreshold;
     double m_highPressureTreshold;
     bool m_alarmOn;
+
+    double pressureValue();
 };

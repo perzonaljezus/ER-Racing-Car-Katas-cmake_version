@@ -6,12 +6,17 @@ Alarm::Alarm() : m_sensor(), m_lowPressureTreshold(17), m_highPressureTreshold(2
 
 void Alarm::check()
 {
-    double psiPressureValue = m_sensor.popNextPressurePsiValue();
+    double psiPressureValue = pressureValue();
 
     if (psiPressureValue < m_lowPressureTreshold || m_highPressureTreshold < psiPressureValue)
     {
         m_alarmOn = true;
     }
+}
+
+double Alarm::pressureValue()  {
+    double psiPressureValue = m_sensor.popNextPressurePsiValue();
+    return psiPressureValue;
 }
 
 bool Alarm::isAlarmOn()
