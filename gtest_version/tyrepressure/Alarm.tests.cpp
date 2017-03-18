@@ -6,14 +6,16 @@ using namespace ::testing;
 
 TEST(Alarm, testAlarmIsOffWhenPressureIsOk)
 {
-    Alarm *alarm = (Alarm *) new TestableAlarm(20. );
+    double okPressure = (TestableAlarm::highPressureThreshold+ TestableAlarm::lowPressureThreshold)/2;
+
+    Alarm *alarm = (Alarm *) new TestableAlarm(okPressure);
     alarm->check();
     ASSERT_FALSE(alarm->isAlarmOn());
 }
 
 TEST(Alarm, testAlarmIsOffWhenPressureIsTooHigh)
 {
-    Alarm *alarm = (Alarm *) new TestableAlarm(22. );
+    Alarm *alarm = (Alarm *) new TestableAlarm( TestableAlarm::highPressureThreshold +1 );
     alarm->check();
     ASSERT_TRUE(alarm->isAlarmOn());
 }
