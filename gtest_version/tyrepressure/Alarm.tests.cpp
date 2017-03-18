@@ -13,9 +13,16 @@ TEST(Alarm, testAlarmIsOffWhenPressureIsOk)
     ASSERT_FALSE(alarm->isAlarmOn());
 }
 
-TEST(Alarm, testAlarmIsOffWhenPressureIsTooHigh)
+TEST(Alarm, testAlarmIsOnWhenPressureIsTooHigh)
 {
     Alarm *alarm = (Alarm *) new TestableAlarm( TestableAlarm::m_highPressureTreshold +1 );
+    alarm->check();
+    ASSERT_TRUE(alarm->isAlarmOn());
+}
+
+TEST(Alarm, testAlarmIsOnWhenPressureIsTooLow)
+{
+    Alarm *alarm = (Alarm *) new TestableAlarm( TestableAlarm::m_lowPressureTreshold -1 );
     alarm->check();
     ASSERT_TRUE(alarm->isAlarmOn());
 }
