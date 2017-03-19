@@ -7,7 +7,7 @@ TEST(Alarm, testAlarmIsOffWhenPressureIsOk)
 {
     double okPressure = (Alarm::m_highPressureTreshold + Alarm::m_lowPressureTreshold)/2;
 
-    Sensor* sensor = new Sensor(okPressure);
+    TirePressureSensor* sensor = new TirePressureSensor(okPressure);
 
     Alarm *alarm = (Alarm *) new Alarm(sensor);
     alarm->check();
@@ -16,7 +16,7 @@ TEST(Alarm, testAlarmIsOffWhenPressureIsOk)
 
 TEST(Alarm, testAlarmIsOnWhenPressureIsTooHigh)
 {
-    Sensor* sensor = new Sensor(Alarm::m_highPressureTreshold+1);
+    TirePressureSensor* sensor = new TirePressureSensor(Alarm::m_highPressureTreshold+1);
 
     Alarm *alarm = (Alarm *) new Alarm( sensor );
     alarm->check();
@@ -25,7 +25,7 @@ TEST(Alarm, testAlarmIsOnWhenPressureIsTooHigh)
 
 TEST(Alarm, testAlarmIsOnWhenPressureIsTooLow)
 {
-    Sensor* sensor = new Sensor(Alarm::m_lowPressureTreshold-1);
+    TirePressureSensor* sensor = new TirePressureSensor(Alarm::m_lowPressureTreshold-1);
 
     Alarm *alarm = (Alarm *) new Alarm( sensor );
     alarm->check();

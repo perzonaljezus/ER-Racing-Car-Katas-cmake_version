@@ -1,9 +1,6 @@
 
 #include "Alarm.hpp"
 
-Alarm::Alarm() : m_sensor(),  m_alarmOn(false)
-{}
-
 double Alarm::m_lowPressureTreshold = 17. ;
 double Alarm::m_highPressureTreshold = 21. ;
 
@@ -32,6 +29,6 @@ bool Alarm::isAlarmOn()
     return m_alarmOn;
 }
 
-Alarm::Alarm(Sensor* sensor) {
+Alarm::Alarm(TirePressureSensor* sensor), m_alarmOn(false) {
     m_sensor = sensor;
 }

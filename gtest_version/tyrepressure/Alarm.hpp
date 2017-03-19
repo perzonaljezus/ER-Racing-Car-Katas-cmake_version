@@ -1,14 +1,12 @@
 #ifndef TYREPRESSURE_ALARM_H
 #define TYREPRESSURE_ALARM_H
 
-#include "Sensor.hpp"
+#include "TirePressureSensor.hpp"
 
 class Alarm
 {
 public:
-    Alarm();
-
-    Alarm(Sensor* sensor);
+    Alarm(TirePressureSensor* sensor);
 
     void check();
     bool isAlarmOn();
@@ -17,7 +15,7 @@ public:
     static double m_highPressureTreshold;
 
 protected:
-    Sensor* m_sensor;
+    TirePressureSensor* m_sensor;
     bool m_alarmOn;
 
     virtual double pressureValue();
