@@ -22,9 +22,9 @@ TEST(Alarm, testAlarmIsOnWhenPressureIsTooHigh)
 {
     double pressure = Alarm::m_highPressureTreshold +1;
 
-    TirePressureSensorMock* sensor = new TirePressureSensorMock();
+    TirePressureSensorMock sensor;
 
-    Alarm *alarm = new Alarm(sensor);
+    Alarm *alarm = new Alarm(&sensor);
     alarm->check();
     EXPECT_TRUE(alarm->isAlarmOn());
 }
@@ -33,9 +33,9 @@ TEST(Alarm, testAlarmIsOnWhenPressureIsTooLow)
 {
     double pressure = Alarm::m_lowPressureTreshold -1;
 
-    TirePressureSensorMock* sensor = new TirePressureSensorMock();
+    TirePressureSensorMock sensor;
 
-    Alarm *alarm = new Alarm(sensor);
+    Alarm *alarm = new Alarm(&sensor);
     alarm->check();
     EXPECT_TRUE(alarm->isAlarmOn());
 }
