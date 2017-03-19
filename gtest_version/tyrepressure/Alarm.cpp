@@ -29,6 +29,6 @@ bool Alarm::isAlarmOn()
     return m_alarmOn;
 }
 
-Alarm::Alarm(TirePressureSensor* sensor), m_alarmOn(false) {
+Alarm::Alarm(TirePressureSensor* sensor) : m_alarmOn(false) {
     m_sensor = sensor;
 }

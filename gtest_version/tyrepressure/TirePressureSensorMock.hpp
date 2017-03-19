@@ -7,11 +7,14 @@
 
 
 #include "TirePressureSensor.hpp"
+#include "gmock/gmock.h"  // Brings in Google Mock.
 
 class TirePressureSensorMock : public TirePressureSensor {
 
 public:
-    TirePressureSensorMock(double presssure);
+    virtual ~TirePressureSensorMock() {}
+
+    MOCK_METHOD0(popNextPressurePsiValue, double());
 };
 
 

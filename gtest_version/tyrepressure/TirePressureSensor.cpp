@@ -4,3 +4,6 @@
 
 #include "TirePressureSensor.hpp"
 
+double TirePressureSensor::popNextPressurePsiValue() {
+    return Sensor::popNextPressurePsiValue();
+}

@@ -8,8 +8,11 @@
 
 #include "Sensor.hpp"
 
-class TirePressureSensor : Sensor {
+class TirePressureSensor : public Sensor {
+public:
+    virtual ~TirePressureSensor() {}
 
+    virtual double popNextPressurePsiValue();
 };
 
 

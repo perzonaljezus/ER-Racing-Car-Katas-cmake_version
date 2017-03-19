@@ -8,9 +8,8 @@ TEST(Alarm, testAlarmIsOffWhenPressureIsOk)
 {
     double pressure = (Alarm::m_highPressureTreshold + Alarm::m_lowPressureTreshold)/2;
 
+    TirePressureSensorMock* sensor = new TirePressureSensorMock();
     // define TirePressureSensorMock . popNextPressurePsiValue to return the predefined pressure
-
-    TirePressureSensorMock* sensor = new TirePressureSensorMock(pressure);
 
     Alarm *alarm = new Alarm(sensor);
     alarm->check();
@@ -21,7 +20,7 @@ TEST(Alarm, testAlarmIsOnWhenPressureIsTooHigh)
 {
     double pressure = Alarm::m_highPressureTreshold +1;
 
-    TirePressureSensorMock* sensor = new TirePressureSensorMock(pressure);
+    TirePressureSensorMock* sensor = new TirePressureSensorMock();
 
     Alarm *alarm = new Alarm(sensor);
     alarm->check();
@@ -32,7 +31,7 @@ TEST(Alarm, testAlarmIsOnWhenPressureIsTooLow)
 {
     double pressure = Alarm::m_lowPressureTreshold -1;
 
-    TirePressureSensorMock* sensor = new TirePressureSensorMock(pressure);
+    TirePressureSensorMock* sensor = new TirePressureSensorMock();
 
     Alarm *alarm = new Alarm(sensor);
     alarm->check();

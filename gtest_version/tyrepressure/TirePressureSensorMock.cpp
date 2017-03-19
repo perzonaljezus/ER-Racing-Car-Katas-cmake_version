@@ -3,7 +3,3 @@
 //
 
 #include "TirePressureSensorMock.hpp"
-
-TirePressureSensorMock::TirePressureSensorMock(double presssure) {
-
-}
