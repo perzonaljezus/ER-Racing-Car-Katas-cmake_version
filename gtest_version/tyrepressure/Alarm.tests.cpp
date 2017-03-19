@@ -43,3 +43,29 @@ TEST(Alarm, testAlarmIsOnWhenPressureIsTooLow)
     alarm->check();
     EXPECT_TRUE(alarm->isAlarmOn());
 }
+
+TEST(Alarm, testAlarmIsOnWhenPressureIsOnHighLimit)
+{
+    double pressure = Alarm::m_highPressureTreshold;
+
+    TirePressureSensorMock sensor;
+    EXPECT_CALL(sensor, popNextPressurePsiValue())
+            .WillOnce(Return(pressure));
+
+    Alarm *alarm = new Alarm(&sensor);
+    alarm->check();
+    EXPECT_FALSE(alarm->isAlarmOn());
+}
+
+TEST(Alarm, testAlarmIsOnWhenPressureIsOnLowLimit)
+{
+    double pressure = Alarm::m_lowPressureTreshold;
+
+    TirePressureSensorMock sensor;
+    EXPECT_CALL(sensor, popNextPressurePsiValue())
+            .WillOnce(Return(pressure));
+
+    Alarm *alarm = new Alarm(&sensor);
+    alarm->check();
+    EXPECT_FALSE(alarm->isAlarmOn());
+}
