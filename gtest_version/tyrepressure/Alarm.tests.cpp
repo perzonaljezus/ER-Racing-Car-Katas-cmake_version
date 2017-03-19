@@ -1,33 +1,40 @@
 #include "Alarm.hpp"
+#include "TirePressureSensorMock.hpp"
 #include <gmock/gmock.h>
 
 using namespace ::testing;
 
 TEST(Alarm, testAlarmIsOffWhenPressureIsOk)
 {
-    double okPressure = (Alarm::m_highPressureTreshold + Alarm::m_lowPressureTreshold)/2;
+    double pressure = (Alarm::m_highPressureTreshold + Alarm::m_lowPressureTreshold)/2;
 
-    TirePressureSensor* sensor = new TirePressureSensor(okPressure);
+    // define TirePressureSensorMock . popNextPressurePsiValue to return the predefined pressure
 
-    Alarm *alarm = (Alarm *) new Alarm(sensor);
+    TirePressureSensorMock* sensor = new TirePressureSensorMock(pressure);
+
+    Alarm *alarm = new Alarm(sensor);
     alarm->check();
     ASSERT_FALSE(alarm->isAlarmOn());
 }
 
 TEST(Alarm, testAlarmIsOnWhenPressureIsTooHigh)
 {
-    TirePressureSensor* sensor = new TirePressureSensor(Alarm::m_highPressureTreshold+1);
+    double pressure = Alarm::m_highPressureTreshold +1;
 
-    Alarm *alarm = (Alarm *) new Alarm( sensor );
+    TirePressureSensorMock* sensor = new TirePressureSensorMock(pressure);
+
+    Alarm *alarm = new Alarm(sensor);
     alarm->check();
     ASSERT_TRUE(alarm->isAlarmOn());
 }
 
 TEST(Alarm, testAlarmIsOnWhenPressureIsTooLow)
 {
-    TirePressureSensor* sensor = new TirePressureSensor(Alarm::m_lowPressureTreshold-1);
+    double pressure = Alarm::m_lowPressureTreshold -1;
 
-    Alarm *alarm = (Alarm *) new Alarm( sensor );
+    TirePressureSensorMock* sensor = new TirePressureSensorMock(pressure);
+
+    Alarm *alarm = new Alarm(sensor);
     alarm->check();
     ASSERT_TRUE(alarm->isAlarmOn());
 }
