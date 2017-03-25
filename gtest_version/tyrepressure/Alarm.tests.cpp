@@ -5,8 +5,8 @@ using namespace ::testing;
 
 TEST(Alarm, testAlarmIsOffWhenPressureIsOk)
 {
-    SensorMock* sensor = new SensorMock(pressure);
-    Alarm *alarm = new Alarm(sensor);
+    double pressure = 19; // (high + low) 2
+    Alarm *alarm = new Alarm(pressure);
     alarm->check();
     ASSERT_FALSE(alarm->isAlarmOn());
 }
