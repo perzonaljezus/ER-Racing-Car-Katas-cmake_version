@@ -5,9 +5,10 @@ using namespace ::testing;
 
 TEST(Alarm, testAlarmIsOffWhenPressureIsOk)
 {
-    Alarm *alarm = new Alarm();
+    SensorMock* sensor = new SensorMock(pressure);
+    Alarm *alarm = new Alarm(sensor);
     alarm->check();
-    ASSERT_EQ(true, alarm->isAlarmOn());
+    ASSERT_FALSE(alarm->isAlarmOn());
 }
 
 // test alarm is on when pressure is too high
