@@ -16,7 +16,8 @@ public:
     FakeAlarm(double pressure) {
         this->pressure = pressure;
     }
-};
 
+    double pressureValue();
+};
 
 #endif //TYREPRESSURE_FAKEALARM_H

@@ -3,3 +3,7 @@
 //
 
 #include "FakeAlarm.h"
+
+double FakeAlarm::pressureValue() {
+    return this->pressure;
+}
