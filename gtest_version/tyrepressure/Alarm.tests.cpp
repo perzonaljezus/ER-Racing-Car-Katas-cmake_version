@@ -1,4 +1,5 @@
 #include "Alarm.hpp"
+#include "FakeAlarm.h"
 #include <gmock/gmock.h>
 
 using namespace ::testing;
@@ -6,7 +7,7 @@ using namespace ::testing;
 TEST(Alarm, testAlarmIsOffWhenPressureIsOk)
 {
     double pressure = 19; // (high + low) 2
-    Alarm *alarm = new Alarm(pressure);
+    FakeAlarm *alarm = new FakeAlarm(pressure);
     alarm->check();
     ASSERT_FALSE(alarm->isAlarmOn());
 }
