@@ -16,7 +16,7 @@ protected:
     double m_highPressureTreshold;
     bool m_alarmOn;
 
-    double pressureValue();
+    virtual double pressureValue();
 };
 
 #endif //TYREPRESSURE_ALARM_H
