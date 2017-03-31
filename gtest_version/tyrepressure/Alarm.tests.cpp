@@ -14,6 +14,13 @@ TEST(Alarm, testAlarmIsOffWhenPressureIsOk)
 TEST(Alarm, testAlarmIsOnWhenPressureIsTooHigh)
 {
     double pressure = 22; // high+1
+    /* Java allows override during object initialization
+     *
+     * Sensor sensor = new Sensor() {
+        public double popNextPressurePsiValue(){
+            return pressure;
+        }
+    };*/
     FakeAlarm *alarm = new FakeAlarm(pressure);
     alarm->check();
     ASSERT_TRUE(alarm->isAlarmOn());
