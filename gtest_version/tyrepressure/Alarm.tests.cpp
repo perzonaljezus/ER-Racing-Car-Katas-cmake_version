@@ -11,8 +11,32 @@ TEST(Alarm, testAlarmIsOffWhenPressureIsOk)
     alarm->check();
     ASSERT_FALSE(alarm->isAlarmOn());
 }
+TEST(Alarm, testAlarmIsOnWhenPressureIsTooHigh)
+{
+    double pressure = 22; // high+1
+    FakeAlarm *alarm = new FakeAlarm(pressure);
+    alarm->check();
+    ASSERT_TRUE(alarm->isAlarmOn());
+}
+TEST(Alarm, testAlarmIsOnWhenPressureIsTooLow)
+{
+    double pressure = 16; // low-1
+    FakeAlarm *alarm = new FakeAlarm(pressure);
+    alarm->check();
+    ASSERT_TRUE(alarm->isAlarmOn());
+}
+TEST(Alarm, testAlarmIsOffWhenPressureIsOnHighLimit)
+{
+    double pressure = 21; // high
+    FakeAlarm *alarm = new FakeAlarm(pressure);
+    alarm->check();
+    ASSERT_FALSE(alarm->isAlarmOn());
+}
 
-// test alarm is on when pressure is too high
-// test alarm is on when pressure is too low
-// test alarm is off when pressure on high limit
-// test alarm is off when pressure on low limit
+TEST(Alarm, testAlarmIsOffWhenPressureIsOnLowLimit)
+{
+    double pressure = 17; // low
+    FakeAlarm *alarm = new FakeAlarm(pressure);
+    alarm->check();
+    ASSERT_FALSE(alarm->isAlarmOn());
+}
