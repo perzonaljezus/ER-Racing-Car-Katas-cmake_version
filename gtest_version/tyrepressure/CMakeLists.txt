@@ -9,8 +9,6 @@ set(SOURCE_FILES
         Alarm.hpp
         Sensor.cpp
         Sensor.hpp
-        FakeAlarm.cpp
-        FakeAlarm.h
         TyrepressureSensorStub.hpp
         TyrepressureSensor.cpp
         TyrepressureSensor.hpp)
