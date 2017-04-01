@@ -1,18 +1,22 @@
 
 #include "AlarmBuilder.hpp"
 
-AlarmBuilder AlarmBuilder::anAlarm() {
-    return AlarmBuilder();
+AlarmBuilder* AlarmBuilder::anAlarm() {
+    return new AlarmBuilder();
 }
 
-AlarmBuilder AlarmBuilder::usingSensor(TyrepressureSensor* sensor) {
+AlarmBuilder* AlarmBuilder::usingSensor(TyrepressureSensor* sensor) {
     m_sensor = sensor;
 
-    return AlarmBuilder();
+    return this;
 }
 
-AlarmBuilder AlarmBuilder::andWithSafetyRange(SafetyRange *safetyRange) {
+AlarmBuilder* AlarmBuilder::andWithSafetyRange(SafetyRange* safetyRange) {
     m_safetyRange = safetyRange;
 
-    return AlarmBuilder();
+    return this;
+}
+
+Alarm* AlarmBuilder::build() {
+    return new Alarm(m_sensor, m_safetyRange);
 }

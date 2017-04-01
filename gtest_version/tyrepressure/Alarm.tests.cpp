@@ -13,9 +13,9 @@ TEST(Alarm, testAlarmIsOffWhenPressureIsOk)
 
     SafetyRange safetyRange(17., 21.);
 
-    Alarm alarm = AlarmBuilder::anAlarm().
-            usingSensor(&sensor).
-            andWithSafetyRange(&safetyRange).
+    Alarm* alarm = AlarmBuilder::anAlarm()->
+            usingSensor(&sensor)->
+            andWithSafetyRange(&safetyRange)->
             build();
 
     alarm->check();
