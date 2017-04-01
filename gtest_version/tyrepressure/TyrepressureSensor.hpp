@@ -1,6 +1,3 @@
-//
-// Created by Eduard Ruffert on 31.03.17.
-//
 
 #ifndef TYREPRESSURE_TYREPRESSURESENSOR_HPP
 #define TYREPRESSURE_TYREPRESSURESENSOR_HPP

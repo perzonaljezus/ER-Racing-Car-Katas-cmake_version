@@ -1,6 +1,5 @@
 #include "Alarm.hpp"
 #include "TyrepressureSensorStub.hpp"
-#include "SafetyRange.hpp"
 
 using ::testing::Return;
 

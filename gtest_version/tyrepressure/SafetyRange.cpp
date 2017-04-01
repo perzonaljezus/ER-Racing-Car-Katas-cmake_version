@@ -1,6 +1,3 @@
-//
-// Created by Eduard Ruffert on 01.04.17.
-//
 
 #include "SafetyRange.hpp"
 

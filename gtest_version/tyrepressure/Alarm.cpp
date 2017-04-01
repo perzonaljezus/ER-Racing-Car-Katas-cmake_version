@@ -1,6 +1,5 @@
 
 #include "Alarm.hpp"
-#include "SafetyRange.hpp"
 
 
 Alarm::Alarm(TyrepressureSensor *sensor, SafetyRange* safetyRange) : m_sensor(sensor), m_safetyRange(safetyRange), m_alarmOn(false)
