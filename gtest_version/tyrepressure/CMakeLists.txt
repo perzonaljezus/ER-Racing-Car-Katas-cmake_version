@@ -9,11 +9,15 @@ set(SOURCE_FILES
         Alarm.hpp
         Sensor.cpp
         Sensor.hpp
-        FakeAlarm.cpp FakeAlarm.h)
+        FakeAlarm.cpp
+        FakeAlarm.h
+        TyrepressureSensorStub.hpp
+        TyrepressureSensor.cpp
+        TyrepressureSensor.hpp)
 
 add_executable(tyrepressure ${SOURCE_FILES})
 
 add_subdirectory(lib/googletest-master)
 include_directories(lib/googletest-master/googletest/include)
 include_directories(lib/googletest-master/googlemock/include)
-target_link_libraries(tyrepressure gtest gtest_main)
+target_link_libraries(tyrepressure gtest gtest_main gmock gmock_main)

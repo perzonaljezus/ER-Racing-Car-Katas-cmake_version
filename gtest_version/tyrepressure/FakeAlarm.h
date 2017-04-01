@@ -13,11 +13,13 @@ private:
     double pressure;
 
 public:
+    virtual ~FakeAlarm() {}
+
     FakeAlarm(double pressure) {
         this->pressure = pressure;
     }
 
-    double pressureValue();
+    double pressureValue() override;
 };
 
 #endif //TYREPRESSURE_FAKEALARM_H

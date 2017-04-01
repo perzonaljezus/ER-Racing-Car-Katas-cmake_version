@@ -4,6 +4,9 @@
 Alarm::Alarm() : m_sensor(), m_lowPressureTreshold(17), m_highPressureTreshold(21), m_alarmOn(false)
 {}
 
+Alarm::Alarm(TyrepressureSensor* sensor) :  m_sensor(sensor), m_lowPressureTreshold(17), m_highPressureTreshold(21), m_alarmOn(false)
+{}
+
 void Alarm::check()
 {
     double psiPressureValue = pressureValue();
@@ -14,12 +17,13 @@ void Alarm::check()
     }
 }
 
-double Alarm::pressureValue() {
-    double psiPressureValue = m_sensor.popNextPressurePsiValue();
-    return psiPressureValue;
+double Alarm::pressureValue()
+{
+    return m_sensor->pressureValue();
 }
 
 bool Alarm::isAlarmOn()
 {
     return m_alarmOn;
 }
+
