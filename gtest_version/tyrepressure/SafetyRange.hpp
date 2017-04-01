@@ -4,14 +4,15 @@
 
 class SafetyRange {
 
-protected:
-    double m_lowPressureTreshold;
 public:
-    double getLowPressureTreshold() const;
+    SafetyRange(double lowThreshold, double highThreshold);
 
+    double getLowPressureTreshold() const;
     double getHighPressureTreshold() const;
 
+
 protected:
+    double m_lowPressureTreshold;
     double m_highPressureTreshold;
 };
 

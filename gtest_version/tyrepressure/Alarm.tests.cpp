@@ -1,5 +1,6 @@
 #include "Alarm.hpp"
 #include "TyrepressureSensorStub.hpp"
+#include "SafetyRange.hpp"
 
 using ::testing::Return;
 
@@ -10,7 +11,8 @@ TEST(Alarm, testAlarmIsOffWhenPressureIsOk)
     TyrepressureSensorStub sensor;
     EXPECT_CALL(sensor, pressureValue()) .WillOnce(Return(pressure));
 
-    Alarm *alarm = new Alarm(&sensor, safetyRange);
+    SafetyRange safetyRange(17., 21.);
+    Alarm *alarm = new Alarm(&sensor, &safetyRange);
     alarm->check();
     EXPECT_FALSE(alarm->isAlarmOn());
 }
@@ -22,7 +24,8 @@ TEST(Alarm, testAlarmIsOnWhenPressureIsTooHigh)
     TyrepressureSensorStub sensor;
     EXPECT_CALL(sensor, pressureValue()) .WillOnce(Return(pressure));
 
-    Alarm *alarm = new Alarm(&sensor);
+    SafetyRange safetyRange(17., 21.);
+    Alarm *alarm = new Alarm(&sensor, &safetyRange);
     alarm->check();
     EXPECT_TRUE(alarm->isAlarmOn());
 }
@@ -34,7 +37,8 @@ TEST(Alarm, testAlarmIsOnWhenPressureIsTooLow)
     TyrepressureSensorStub sensor;
     EXPECT_CALL(sensor, pressureValue()) .WillOnce(Return(pressure));
 
-    Alarm *alarm = new Alarm(&sensor);
+    SafetyRange safetyRange(17., 21.);
+    Alarm *alarm = new Alarm(&sensor, &safetyRange);
     alarm->check();
     EXPECT_TRUE(alarm->isAlarmOn());
 }
@@ -46,7 +50,8 @@ TEST(Alarm, testAlarmIsOffWhenPressureIsOnHighLimit)
     TyrepressureSensorStub sensor;
     EXPECT_CALL(sensor, pressureValue()) .WillOnce(Return(pressure));
 
-    Alarm *alarm = new Alarm(&sensor);
+    SafetyRange safetyRange(17., 21.);
+    Alarm *alarm = new Alarm(&sensor, &safetyRange);
     alarm->check();
     EXPECT_FALSE(alarm->isAlarmOn());
 }
@@ -58,7 +63,8 @@ TEST(Alarm, testAlarmIsOffWhenPressureIsOnLowLimit)
     TyrepressureSensorStub sensor;
     EXPECT_CALL(sensor, pressureValue()) .WillOnce(Return(pressure));
 
-    Alarm *alarm = new Alarm(&sensor);
+    SafetyRange safetyRange(17., 21.);
+    Alarm *alarm = new Alarm(&sensor, &safetyRange);
     alarm->check();
     EXPECT_FALSE(alarm->isAlarmOn());
 }
