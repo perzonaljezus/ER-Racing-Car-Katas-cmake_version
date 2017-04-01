@@ -17,8 +17,8 @@ void Alarm::check()
 }
 
 bool Alarm::isInRange(double pressureValue) const {
-    return m_safetyRange->getLowPressureTreshold() < pressureValue
-           && pressureValue < m_safetyRange->getHighPressureTreshold();
+    return m_safetyRange->getLowPressureTreshold() <= pressureValue
+           && pressureValue <= m_safetyRange->getHighPressureTreshold();
 }
 
 double Alarm::pressureValue()
