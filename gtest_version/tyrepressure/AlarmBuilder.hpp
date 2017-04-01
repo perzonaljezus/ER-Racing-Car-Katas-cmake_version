@@ -3,9 +3,16 @@
 #define TYREPRESSURE_ALARMBUILDER_HPP
 
 
+#include "TyrepressureSensor.hpp"
+
 class AlarmBuilder {
 public:
     static AlarmBuilder anAlarm();
+
+    AlarmBuilder usingSensor(TyrepressureSensor* sensor);
+
+protected:
+    TyrepressureSensor* m_sensor;
 };
 
 
