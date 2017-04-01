@@ -10,3 +10,9 @@ AlarmBuilder AlarmBuilder::usingSensor(TyrepressureSensor* sensor) {
 
     return AlarmBuilder();
 }
+
+AlarmBuilder AlarmBuilder::andWithSafetyRange(SafetyRange *safetyRange) {
+    m_safetyRange = safetyRange;
+
+    return AlarmBuilder();
+}
