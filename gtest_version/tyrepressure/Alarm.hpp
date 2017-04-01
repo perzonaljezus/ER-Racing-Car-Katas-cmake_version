@@ -19,7 +19,7 @@ protected:
 
     virtual double pressureValue();
 
-    bool isNotInRange(double pressureValue) const;
+    bool isInRange(double pressureValue) const;
 };
 
 #endif //TYREPRESSURE_ALARM_H
