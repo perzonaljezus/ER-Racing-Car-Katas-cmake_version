@@ -10,10 +10,15 @@ void Alarm::check()
 {
     double psiPressureValue = pressureValue();
 
-    if (psiPressureValue < m_safetyRange->getLowPressureTreshold() || m_safetyRange->getHighPressureTreshold() < psiPressureValue)
+    if (isNotInRange(psiPressureValue))
     {
         m_alarmOn = true;
     }
+}
+
+bool Alarm::isNotInRange(double pressureValue) const {
+    return pressureValue < m_safetyRange->getLowPressureTreshold()
+           || m_safetyRange->getHighPressureTreshold() < pressureValue;
 }
 
 double Alarm::pressureValue()
