@@ -11,7 +11,12 @@ TEST(Alarm, testAlarmIsOffWhenPressureIsOk)
     EXPECT_CALL(sensor, pressureValue()) .WillOnce(Return(pressure));
 
     SafetyRange safetyRange(17., 21.);
-    Alarm *alarm = new Alarm(&sensor, &safetyRange);
+
+    alarm = anAlarm().
+            usingSensor(sensor).
+            andWithSafetyRange(safetyRange).
+            build();
+
     alarm->check();
     EXPECT_FALSE(alarm->isAlarmOn());
 }
