@@ -1,5 +1,6 @@
 #include "Alarm.hpp"
 #include "TyrepressureSensorStub.hpp"
+#include "AlarmBuilder.hpp"
 
 using ::testing::Return;
 
@@ -12,7 +13,7 @@ TEST(Alarm, testAlarmIsOffWhenPressureIsOk)
 
     SafetyRange safetyRange(17., 21.);
 
-    alarm = anAlarm().
+    Alarm alarm = AlarmBuilder::anAlarm().
             usingSensor(sensor).
             andWithSafetyRange(safetyRange).
             build();
@@ -20,6 +21,8 @@ TEST(Alarm, testAlarmIsOffWhenPressureIsOk)
     alarm->check();
     EXPECT_FALSE(alarm->isAlarmOn());
 }
+
+
 
 TEST(Alarm, testAlarmIsOnWhenPressureIsTooHigh)
 {
