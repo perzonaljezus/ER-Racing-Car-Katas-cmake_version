@@ -11,7 +11,9 @@ set(SOURCE_FILES
         Sensor.hpp
         TyrepressureSensorStub.hpp
         TyrepressureSensor.cpp
-        TyrepressureSensor.hpp)
+        TyrepressureSensor.hpp
+        SafetyRange.cpp
+        SafetyRange.hpp)
 
 add_executable(tyrepressure ${SOURCE_FILES})
 

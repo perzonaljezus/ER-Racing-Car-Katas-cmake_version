@@ -14,8 +14,6 @@ public:
 
 protected:
     TyrepressureSensor* m_sensor;
-    double m_lowPressureTreshold;
-    double m_highPressureTreshold;
     bool m_alarmOn;
 
     virtual double pressureValue();

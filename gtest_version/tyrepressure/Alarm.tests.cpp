@@ -10,7 +10,7 @@ TEST(Alarm, testAlarmIsOffWhenPressureIsOk)
     TyrepressureSensorStub sensor;
     EXPECT_CALL(sensor, pressureValue()) .WillOnce(Return(pressure));
 
-    Alarm *alarm = new Alarm(&sensor);
+    Alarm *alarm = new Alarm(&sensor, safetyRange);
     alarm->check();
     EXPECT_FALSE(alarm->isAlarmOn());
 }
