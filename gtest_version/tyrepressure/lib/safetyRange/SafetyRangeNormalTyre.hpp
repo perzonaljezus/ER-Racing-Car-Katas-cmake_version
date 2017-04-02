@@ -1,20 +1,15 @@
-#ifndef TYREPRESSURE_SAFETYRANGE_HPP
-#define TYREPRESSURE_SAFETYRANGE_HPP
+#ifndef TYREPRESSURE_SAFETYRANGENORMALTYRE_HPP
+#define TYREPRESSURE_SAFETYRANGENORMALTYRE_HPP
 
 
-class SafetyRangeNormalTyre {
+#include "SafetyRange.hpp"
+
+class SafetyRangeNormalTyre : public SafetyRange {
 
 public:
-    SafetyRangeNormalTyre(double lowThreshold, double highThreshold);
+    SafetyRangeNormalTyre();
 
-    double getLowPressureTreshold() const;
-    double getHighPressureTreshold() const;
-
-
-protected:
-    double m_lowPressureTreshold;
-    double m_highPressureTreshold;
 };
 
 
-#endif //TYREPRESSURE_SAFETYRANGE_HPP
+#endif //TYREPRESSURE_SAFETYRANGENORMALTYRE_HPP

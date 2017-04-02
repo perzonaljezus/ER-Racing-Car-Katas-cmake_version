@@ -7,12 +7,12 @@ using ::testing::Return;
 
 TEST(Alarm, testWetTyreeAlarmIsOffWhenPressureIsOk)
 {
-    double pressure = 19; // (high + low) 2
+    SafetyRangeWetTyre safetyRange;
+    double pressure = (safetyRange.getLowPressureTreshold() + safetyRange.getHighPressureTreshold() ) / 2. ;
 
     TyrepressureSensorWetTyreStub sensor;
     EXPECT_CALL(sensor, probe()) .WillOnce(Return(pressure));
 
-    SafetyRangeWetTyre safetyRange(15. , 25.);
 
     Alarm* alarm = AlarmBuilderWetTyre::anAlarm()->
             usingSensor(&sensor)->
@@ -27,12 +27,12 @@ TEST(Alarm, testWetTyreeAlarmIsOffWhenPressureIsOk)
 
 TEST(Alarm, testWetTyreeAlarmIsOnWhenPressureIsTooHigh)
 {
-    double pressure = 26. ; // high+1
+    SafetyRangeWetTyre safetyRange;
+    double pressure = safetyRange.getHighPressureTreshold() + 1;
 
     TyrepressureSensorWetTyreStub sensor;
     EXPECT_CALL(sensor, probe()) .WillOnce(Return(pressure));
 
-    SafetyRangeWetTyre safetyRange(15. , 25.);
     Alarm *alarm = new Alarm(&sensor, &safetyRange);
     alarm->check();
     EXPECT_TRUE(alarm->isAlarmOn());
@@ -40,12 +40,12 @@ TEST(Alarm, testWetTyreeAlarmIsOnWhenPressureIsTooHigh)
 
 TEST(Alarm, testWetTyreeAlarmIsOnWhenPressureIsTooLow)
 {
-    double pressure = 14. ; // low-1
+    SafetyRangeWetTyre safetyRange;
+    double pressure = safetyRange.getLowPressureTreshold() - 1;
 
     TyrepressureSensorWetTyreStub sensor;
     EXPECT_CALL(sensor, probe()) .WillOnce(Return(pressure));
 
-    SafetyRangeWetTyre safetyRange(15. , 25.);
     Alarm *alarm = new Alarm(&sensor, &safetyRange);
     alarm->check();
     EXPECT_TRUE(alarm->isAlarmOn());
@@ -53,12 +53,12 @@ TEST(Alarm, testWetTyreeAlarmIsOnWhenPressureIsTooLow)
 
 TEST(Alarm, testWetTyreeAlarmIsOffWhenPressureIsOnHighLimit)
 {
-    double pressure = 25. ; // high
+    SafetyRangeWetTyre safetyRange;
+    double pressure = safetyRange.getHighPressureTreshold();
 
     TyrepressureSensorWetTyreStub sensor;
     EXPECT_CALL(sensor, probe()) .WillOnce(Return(pressure));
 
-    SafetyRangeWetTyre safetyRange(15. , 25.);
     Alarm *alarm = new Alarm(&sensor, &safetyRange);
     alarm->check();
     EXPECT_FALSE(alarm->isAlarmOn());
@@ -66,12 +66,12 @@ TEST(Alarm, testWetTyreeAlarmIsOffWhenPressureIsOnHighLimit)
 
 TEST(Alarm, testWetTyreeAlarmIsOffWhenPressureIsOnLowLimit)
 {
-    double pressure = 15. ; // low
+    SafetyRangeWetTyre safetyRange;
+    double pressure = safetyRange.getLowPressureTreshold();
 
     TyrepressureSensorWetTyreStub sensor;
     EXPECT_CALL(sensor, probe()) .WillOnce(Return(pressure));
 
-    SafetyRangeWetTyre safetyRange(15. , 25.);
     Alarm *alarm = new Alarm(&sensor, &safetyRange);
     alarm->check();
     EXPECT_FALSE(alarm->isAlarmOn());

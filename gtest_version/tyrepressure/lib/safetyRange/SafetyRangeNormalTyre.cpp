@@ -1,14 +1,7 @@
 
 #include "SafetyRangeNormalTyre.hpp"
 
-SafetyRangeNormalTyre::SafetyRangeNormalTyre(double lowThreshold, double highThreshold) : m_lowPressureTreshold(lowThreshold), m_highPressureTreshold(highThreshold)
+
+SafetyRangeNormalTyre::SafetyRangeNormalTyre() : SafetyRange(17.,21.)
 {}
-
-double SafetyRangeNormalTyre::getLowPressureTreshold() const {
-    return m_lowPressureTreshold;
-}
-
-double SafetyRangeNormalTyre::getHighPressureTreshold() const {
-    return m_highPressureTreshold;
-}
 

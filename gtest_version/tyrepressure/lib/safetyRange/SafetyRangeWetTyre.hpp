@@ -2,18 +2,12 @@
 #define TYREPRESSURE_SAFETYRANGEWETTYRE_HPP
 
 
-class SafetyRangeWetTyre {
+#include "SafetyRange.hpp"
+
+class SafetyRangeWetTyre : public SafetyRange {
 
 public:
-    SafetyRangeWetTyre(double lowThreshold, double highThreshold);
-
-    double getLowPressureTreshold() const;
-    double getHighPressureTreshold() const;
-
-
-protected:
-    double m_lowPressureTreshold;
-    double m_highPressureTreshold;
+    SafetyRangeWetTyre();
 };
 
 

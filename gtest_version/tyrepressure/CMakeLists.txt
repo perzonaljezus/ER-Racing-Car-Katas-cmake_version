@@ -4,10 +4,16 @@ project(tyrepressure)
 set(CMAKE_CXX_STANDARD 11)
 
 set(SOURCE_FILES
-        test/Alarm.NormalTyre.tests.cpp
-        test/Alarm.WetTyre.tests.cpp
         Alarm.cpp
         Alarm.hpp
+        test/Alarm.NormalTyre.tests.cpp
+        test/Alarm.WetTyre.tests.cpp
+        test/TyrepressureSensorNormalTyreStub.hpp
+        test/TyrepressureSensorWetTyreStub.hpp
+        test/AlarmBuilderNormalTyre.cpp
+        test/AlarmBuilderNormalTyre.hpp
+        test/AlarmBuilderWetTyre.cpp
+        test/AlarmBuilderWetTyre.hpp
         lib/sensor/legacy/Sensor.cpp
         lib/sensor/legacy/Sensor.hpp
         lib/sensor/ISensor.hpp
@@ -15,16 +21,11 @@ set(SOURCE_FILES
         lib/sensor/TyrepressureSensorNormalTyre.hpp
         lib/sensor/TyrepressureSensorWetTyre.cpp
         lib/sensor/TyrepressureSensorWetTyre.hpp
+        lib/safetyRange/SafetyRange.hpp
         lib/safetyRange/SafetyRangeNormalTyre.cpp
-        test/TyrepressureSensorNormalTyreStub.hpp
-        test/TyrepressureSensorWetTyreStub.hpp
         lib/safetyRange/SafetyRangeNormalTyre.hpp
         lib/safetyRange/SafetyRangeWetTyre.cpp
         lib/safetyRange/SafetyRangeWetTyre.hpp
-        test/AlarmBuilderNormalTyre.cpp
-        test/AlarmBuilderNormalTyre.hpp
-        test/AlarmBuilderWetTyre.cpp
-        test/AlarmBuilderWetTyre.hpp
         )
 
 add_executable(tyrepressure ${SOURCE_FILES})
