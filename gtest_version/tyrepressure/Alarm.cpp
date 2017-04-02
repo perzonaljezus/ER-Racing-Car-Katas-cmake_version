@@ -6,9 +6,9 @@ Alarm::Alarm(ISensor *sensor, SafetyRange *safetyRange) : m_sensor(sensor), m_sa
 
 void Alarm::check()
 {
-    double psiPressureValue = probe();
+    double pressure = probe();
 
-    if (! m_safetyRange->isInRange(psiPressureValue))
+    if (! m_safetyRange->isInRange(pressure))
     {
         m_alarmOn = true;
     }
