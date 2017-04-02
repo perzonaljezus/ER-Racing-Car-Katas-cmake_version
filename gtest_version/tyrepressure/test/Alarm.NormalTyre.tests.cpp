@@ -1,6 +1,7 @@
 #include "../Alarm.hpp"
-#include "AlarmBuilderNormalTyre.hpp"
+#include "AlarmBuilder.hpp"
 #include "TyrepressureSensorNormalTyreStub.hpp"
+#include "../lib/safetyRange/SafetyRangeNormalTyre.hpp"
 
 using ::testing::Return;
 
@@ -12,7 +13,7 @@ TEST(Alarm, testAlarmNormalTyreIsOffWhenPressureIsOk)
     TyrepressureSensorNormalTyreStub sensor;
     EXPECT_CALL(sensor, probe()) .WillOnce(Return(pressure));
 
-    Alarm* alarm = AlarmBuilderNormalTyre::anAlarm()->
+    Alarm* alarm = AlarmBuilder::anAlarm()->
             usingSensor(&sensor)->
             andWithSafetyRange(&safetyRange)->
             build();

@@ -1,6 +1,7 @@
 #include "../Alarm.hpp"
-#include "AlarmBuilderWetTyre.hpp"
+#include "AlarmBuilder.hpp"
 #include "TyrepressureSensorWetTyreStub.hpp"
+#include "../lib/safetyRange/SafetyRangeWetTyre.hpp"
 
 using ::testing::Return;
 
@@ -13,7 +14,7 @@ TEST(Alarm, testWetTyreAlarmIsOffWhenPressureIsOk)
     EXPECT_CALL(sensor, probe()) .WillOnce(Return(pressure));
 
 
-    Alarm* alarm = AlarmBuilderWetTyre::anAlarm()->
+    Alarm* alarm = AlarmBuilder::anAlarm()->
             usingSensor(&sensor)->
             andWithSafetyRange(&safetyRange)->
             build();

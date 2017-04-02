@@ -10,10 +10,8 @@ set(SOURCE_FILES
         test/Alarm.WetTyre.tests.cpp
         test/TyrepressureSensorNormalTyreStub.hpp
         test/TyrepressureSensorWetTyreStub.hpp
-        test/AlarmBuilderNormalTyre.cpp
-        test/AlarmBuilderNormalTyre.hpp
-        test/AlarmBuilderWetTyre.cpp
-        test/AlarmBuilderWetTyre.hpp
+        test/AlarmBuilder.cpp
+        test/AlarmBuilder.hpp
         lib/sensor/legacy/Sensor.cpp
         lib/sensor/legacy/Sensor.hpp
         lib/sensor/ISensor.hpp
