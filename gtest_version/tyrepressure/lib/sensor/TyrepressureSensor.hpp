@@ -2,7 +2,7 @@
 #ifndef TYREPRESSURE_TYREPRESSURESENSOR_HPP
 #define TYREPRESSURE_TYREPRESSURESENSOR_HPP
 
-#include "Sensor.hpp"
+#include "../sensor/legacy/Sensor.hpp"
 
 class TyrepressureSensor : public Sensor {
 public:

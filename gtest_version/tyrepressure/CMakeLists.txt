@@ -4,16 +4,16 @@ project(tyrepressure)
 set(CMAKE_CXX_STANDARD 11)
 
 set(SOURCE_FILES
-        Alarm.tests.cpp
+        test/Alarm.tests.cpp
         Alarm.cpp
         Alarm.hpp
-        Sensor.cpp
-        Sensor.hpp
-        TyrepressureSensorStub.hpp
-        TyrepressureSensor.cpp
-        TyrepressureSensor.hpp
-        SafetyRange.cpp
-        SafetyRange.hpp AlarmBuilder.cpp AlarmBuilder.hpp)
+        lib/sensor/legacy/Sensor.cpp
+        lib/sensor/legacy/Sensor.hpp
+        test/TyrepressureSensorStub.hpp
+        lib/sensor/TyrepressureSensor.cpp
+        lib/sensor/TyrepressureSensor.hpp
+        lib/safetyRange/SafetyRange.cpp
+        lib/safetyRange/SafetyRange.hpp test/AlarmBuilder.cpp test/AlarmBuilder.hpp)
 
 add_executable(tyrepressure ${SOURCE_FILES})
 

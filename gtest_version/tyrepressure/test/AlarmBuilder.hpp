@@ -3,9 +3,9 @@
 #define TYREPRESSURE_ALARMBUILDER_HPP
 
 
-#include "TyrepressureSensor.hpp"
-#include "SafetyRange.hpp"
-#include "Alarm.hpp"
+#include "../lib/sensor/TyrepressureSensor.hpp"
+#include "../lib/safetyRange/SafetyRange.hpp"
+#include "../Alarm.hpp"
 
 class AlarmBuilder {
 public:

@@ -1,8 +1,8 @@
 #ifndef TYREPRESSURE_ALARM_H
 #define TYREPRESSURE_ALARM_H
 
-#include "TyrepressureSensor.hpp"
-#include "SafetyRange.hpp"
+#include "lib/sensor/TyrepressureSensor.hpp"
+#include "lib/safetyRange/SafetyRange.hpp"
 
 class Alarm
 {
