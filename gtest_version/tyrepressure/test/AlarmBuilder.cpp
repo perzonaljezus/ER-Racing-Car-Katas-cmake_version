@@ -11,7 +11,7 @@ AlarmBuilder* AlarmBuilder::usingSensor(TyrepressureSensor* sensor) {
     return this;
 }
 
-AlarmBuilder* AlarmBuilder::andWithSafetyRange(SafetyRange* safetyRange) {
+AlarmBuilder* AlarmBuilder::andWithSafetyRange(SafetyRangeNormalTyre* safetyRange) {
     m_safetyRange = safetyRange;
 
     return this;

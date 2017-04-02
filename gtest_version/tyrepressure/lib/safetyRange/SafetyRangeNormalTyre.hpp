@@ -2,10 +2,10 @@
 #define TYREPRESSURE_SAFETYRANGE_HPP
 
 
-class SafetyRange {
+class SafetyRangeNormalTyre {
 
 public:
-    SafetyRange(double lowThreshold, double highThreshold);
+    SafetyRangeNormalTyre(double lowThreshold, double highThreshold);
 
     double getLowPressureTreshold() const;
     double getHighPressureTreshold() const;

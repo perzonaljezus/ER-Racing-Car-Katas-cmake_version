@@ -1,6 +1,7 @@
 #include "../Alarm.hpp"
 #include "TyrepressureSensorWetTyreStub.hpp"
 #include "AlarmBuilder.hpp"
+#include "../lib/safetyRange/SafetyRangeWetTyre.hpp"
 
 using ::testing::Return;
 
@@ -11,7 +12,7 @@ TEST(Alarm, testWetTyreeAlarmIsOffWhenPressureIsOk)
     TyrepressureSensorWetTyreStub sensor;
     EXPECT_CALL(sensor, pressureValue()) .WillOnce(Return(pressure));
 
-    SafetyRange safetyRange(15. , 25.);
+    SafetyRangeWetTyre safetyRange(15. , 25.);
 
     Alarm* alarm = AlarmBuilder::anAlarm()->
             usingSensor(&sensor)->
@@ -31,7 +32,7 @@ TEST(Alarm, testWetTyreeAlarmIsOnWhenPressureIsTooHigh)
     TyrepressureSensorWetTyreStub sensor;
     EXPECT_CALL(sensor, pressureValue()) .WillOnce(Return(pressure));
 
-    SafetyRange safetyRange(15. , 25.);
+    SafetyRangeWetTyre safetyRange(15. , 25.);
     Alarm *alarm = new Alarm(&sensor, &safetyRange);
     alarm->check();
     EXPECT_TRUE(alarm->isAlarmOn());
@@ -44,7 +45,7 @@ TEST(Alarm, testWetTyreeAlarmIsOnWhenPressureIsTooLow)
     TyrepressureSensorWetTyreStub sensor;
     EXPECT_CALL(sensor, pressureValue()) .WillOnce(Return(pressure));
 
-    SafetyRange safetyRange(15. , 25.);
+    SafetyRangeWetTyre safetyRange(15. , 25.);
     Alarm *alarm = new Alarm(&sensor, &safetyRange);
     alarm->check();
     EXPECT_TRUE(alarm->isAlarmOn());
@@ -57,7 +58,7 @@ TEST(Alarm, testWetTyreeAlarmIsOffWhenPressureIsOnHighLimit)
     TyrepressureSensorWetTyreStub sensor;
     EXPECT_CALL(sensor, pressureValue()) .WillOnce(Return(pressure));
 
-    SafetyRange safetyRange(15. , 25.);
+    SafetyRangeWetTyre safetyRange(15. , 25.);
     Alarm *alarm = new Alarm(&sensor, &safetyRange);
     alarm->check();
     EXPECT_FALSE(alarm->isAlarmOn());
@@ -70,7 +71,7 @@ TEST(Alarm, testWetTyreeAlarmIsOffWhenPressureIsOnLowLimit)
     TyrepressureSensorWetTyreStub sensor;
     EXPECT_CALL(sensor, pressureValue()) .WillOnce(Return(pressure));
 
-    SafetyRange safetyRange(15. , 25.);
+    SafetyRangeWetTyre safetyRange(15. , 25.);
     Alarm *alarm = new Alarm(&sensor, &safetyRange);
     alarm->check();
     EXPECT_FALSE(alarm->isAlarmOn());

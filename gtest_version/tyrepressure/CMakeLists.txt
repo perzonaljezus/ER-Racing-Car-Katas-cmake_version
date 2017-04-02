@@ -16,8 +16,10 @@ set(SOURCE_FILES
         lib/sensor/TyrepressureSensor.hpp
         lib/sensor/TyrepressureSensorWetTyre.cpp
         lib/sensor/TyrepressureSensorWetTyre.hpp
-        lib/safetyRange/SafetyRange.cpp
-        lib/safetyRange/SafetyRange.hpp
+        lib/safetyRange/SafetyRangeNormalTyre.cpp
+        lib/safetyRange/SafetyRangeNormalTyre.hpp
+        lib/safetyRange/SafetyRangeWetTyre.cpp
+        lib/safetyRange/SafetyRangeWetTyre.hpp
         test/AlarmBuilder.cpp
         test/AlarmBuilder.hpp)
 

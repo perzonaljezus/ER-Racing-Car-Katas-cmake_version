@@ -4,7 +4,7 @@
 
 
 #include "../lib/sensor/TyrepressureSensor.hpp"
-#include "../lib/safetyRange/SafetyRange.hpp"
+#include "../lib/safetyRange/SafetyRangeNormalTyre.hpp"
 #include "../Alarm.hpp"
 
 class AlarmBuilder {
@@ -13,13 +13,13 @@ public:
 
     AlarmBuilder* usingSensor(TyrepressureSensor* sensor);
 
-    AlarmBuilder* andWithSafetyRange(SafetyRange* safetyRange);
+    AlarmBuilder* andWithSafetyRange(SafetyRangeNormalTyre* safetyRange);
 
     Alarm* build();
 
 protected:
     TyrepressureSensor* m_sensor;
-    SafetyRange* m_safetyRange;
+    SafetyRangeNormalTyre* m_safetyRange;
 };
 
 

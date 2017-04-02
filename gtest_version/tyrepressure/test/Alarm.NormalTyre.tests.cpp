@@ -11,7 +11,7 @@ TEST(Alarm, testAlarmIsOffWhenPressureIsOk)
     TyrepressureSensorStub sensor;
     EXPECT_CALL(sensor, pressureValue()) .WillOnce(Return(pressure));
 
-    SafetyRange safetyRange(17., 21.);
+    SafetyRangeNormalTyre safetyRange(17., 21.);
 
     Alarm* alarm = AlarmBuilder::anAlarm()->
             usingSensor(&sensor)->
@@ -31,7 +31,7 @@ TEST(Alarm, testAlarmIsOnWhenPressureIsTooHigh)
     TyrepressureSensorStub sensor;
     EXPECT_CALL(sensor, pressureValue()) .WillOnce(Return(pressure));
 
-    SafetyRange safetyRange(17., 21.);
+    SafetyRangeNormalTyre safetyRange(17., 21.);
     Alarm *alarm = new Alarm(&sensor, &safetyRange);
     alarm->check();
     EXPECT_TRUE(alarm->isAlarmOn());
@@ -44,7 +44,7 @@ TEST(Alarm, testAlarmIsOnWhenPressureIsTooLow)
     TyrepressureSensorStub sensor;
     EXPECT_CALL(sensor, pressureValue()) .WillOnce(Return(pressure));
 
-    SafetyRange safetyRange(17., 21.);
+    SafetyRangeNormalTyre safetyRange(17., 21.);
     Alarm *alarm = new Alarm(&sensor, &safetyRange);
     alarm->check();
     EXPECT_TRUE(alarm->isAlarmOn());
@@ -57,7 +57,7 @@ TEST(Alarm, testAlarmIsOffWhenPressureIsOnHighLimit)
     TyrepressureSensorStub sensor;
     EXPECT_CALL(sensor, pressureValue()) .WillOnce(Return(pressure));
 
-    SafetyRange safetyRange(17., 21.);
+    SafetyRangeNormalTyre safetyRange(17., 21.);
     Alarm *alarm = new Alarm(&sensor, &safetyRange);
     alarm->check();
     EXPECT_FALSE(alarm->isAlarmOn());
@@ -70,7 +70,7 @@ TEST(Alarm, testAlarmIsOffWhenPressureIsOnLowLimit)
     TyrepressureSensorStub sensor;
     EXPECT_CALL(sensor, pressureValue()) .WillOnce(Return(pressure));
 
-    SafetyRange safetyRange(17., 21.);
+    SafetyRangeNormalTyre safetyRange(17., 21.);
     Alarm *alarm = new Alarm(&sensor, &safetyRange);
     alarm->check();
     EXPECT_FALSE(alarm->isAlarmOn());
