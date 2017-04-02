@@ -1,7 +1,6 @@
 #include "../Alarm.hpp"
-#include "TyrepressureSensorWetTyreStub.hpp"
-#include "../lib/safetyRange/SafetyRangeWetTyre.hpp"
 #include "AlarmBuilderWetTyre.hpp"
+#include "TyrepressureSensorWetTyreStub.hpp"
 
 using ::testing::Return;
 
