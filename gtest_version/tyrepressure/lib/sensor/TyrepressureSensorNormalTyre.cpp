@@ -4,3 +4,7 @@
 TyrepressureSensorNormalTyre::TyrepressureSensorNormalTyre() {
 
 }
+
+double TyrepressureSensorNormalTyre::probe() {
+    return Sensor::popNextPressurePsiValue();
+}

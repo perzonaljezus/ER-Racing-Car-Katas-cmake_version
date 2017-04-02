@@ -5,7 +5,7 @@
 #include "lib/safetyRange/SafetyRangeWetTyre.hpp"
 
 
-Alarm::Alarm(TyrepressureSensorWetTyre *sensor, SafetyRangeWetTyre *safetyRange) : m_sensor(sensor), m_safetyRange(safetyRange), m_alarmOn(false)
+Alarm::Alarm(ISensor *sensor, SafetyRangeWetTyre *safetyRange) : m_sensor(sensor), m_safetyRange(safetyRange), m_alarmOn(false)
 {}
 
 void Alarm::check()

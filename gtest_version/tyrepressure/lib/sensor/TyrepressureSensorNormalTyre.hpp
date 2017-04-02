@@ -10,6 +10,8 @@ public:
     TyrepressureSensorNormalTyre();
     virtual ~TyrepressureSensorNormalTyre() {}
 
+    virtual double probe();
+
 };
 
 

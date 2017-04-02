@@ -3,9 +3,9 @@
 #define TYREPRESSURE_SENSORWETTYREMOCK_HPP
 
 #include <gmock/gmock.h>
-#include "../lib/sensor/ISensor.hpp"
+#include "../lib/sensor/TyrepressureSensorWetTyre.hpp"
 
-class TyrepressureSensorWetTyreStub : public TyrepressureSensorNormalTyre
+class TyrepressureSensorWetTyreStub : public TyrepressureSensorWetTyre
 {
 public:
     virtual ~TyrepressureSensorWetTyreStub() {}
