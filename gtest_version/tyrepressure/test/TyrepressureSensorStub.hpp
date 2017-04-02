@@ -4,7 +4,7 @@
 
 #include <gmock/gmock.h>
 
-class TyrepressureSensorStub : public TyrepressureSensor
+class TyrepressureSensorStub : public TyrepressureSensorNormalTyre
 {
 public:
     virtual ~TyrepressureSensorStub() {}

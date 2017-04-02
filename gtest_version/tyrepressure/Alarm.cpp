@@ -2,7 +2,7 @@
 #include "Alarm.hpp"
 
 
-Alarm::Alarm(TyrepressureSensor *sensor, SafetyRangeNormalTyre* safetyRange) : m_sensor(sensor), m_safetyRange(safetyRange), m_alarmOn(false)
+Alarm::Alarm(TyrepressureSensorNormalTyre *sensor, SafetyRangeNormalTyre* safetyRange) : m_sensor(sensor), m_safetyRange(safetyRange), m_alarmOn(false)
 {}
 
 void Alarm::check()

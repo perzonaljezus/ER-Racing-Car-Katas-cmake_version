@@ -1,7 +1,7 @@
 #include "../Alarm.hpp"
 #include "TyrepressureSensorWetTyreStub.hpp"
-#include "AlarmBuilder.hpp"
 #include "../lib/safetyRange/SafetyRangeWetTyre.hpp"
+#include "AlarmBuilderWetTyre.hpp"
 
 using ::testing::Return;
 
@@ -14,7 +14,7 @@ TEST(Alarm, testWetTyreeAlarmIsOffWhenPressureIsOk)
 
     SafetyRangeWetTyre safetyRange(15. , 25.);
 
-    Alarm* alarm = AlarmBuilder::anAlarm()->
+    Alarm* alarm = AlarmBuilderWetTyre::anAlarm()->
             usingSensor(&sensor)->
             andWithSafetyRange(&safetyRange)->
             build();

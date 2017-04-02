@@ -12,16 +12,19 @@ set(SOURCE_FILES
         lib/sensor/legacy/Sensor.hpp
         test/TyrepressureSensorStub.hpp
         test/TyrepressureSensorWetTyreStub.hpp
-        lib/sensor/TyrepressureSensor.cpp
-        lib/sensor/TyrepressureSensor.hpp
+        lib/sensor/TyrepressureSensorNormalTyre.cpp
+        lib/sensor/TyrepressureSensorNormalTyre.hpp
         lib/sensor/TyrepressureSensorWetTyre.cpp
         lib/sensor/TyrepressureSensorWetTyre.hpp
         lib/safetyRange/SafetyRangeNormalTyre.cpp
         lib/safetyRange/SafetyRangeNormalTyre.hpp
         lib/safetyRange/SafetyRangeWetTyre.cpp
         lib/safetyRange/SafetyRangeWetTyre.hpp
-        test/AlarmBuilder.cpp
-        test/AlarmBuilder.hpp)
+        test/AlarmBuilderNormalTyre.cpp
+        test/AlarmBuilderNormalTyre.hpp
+        test/AlarmBuilderWetTyre.cpp
+        test/AlarmBuilderWetTyre.hpp
+        )
 
 add_executable(tyrepressure ${SOURCE_FILES})
 

@@ -1,19 +1,19 @@
 #ifndef TYREPRESSURE_ALARM_H
 #define TYREPRESSURE_ALARM_H
 
-#include "lib/sensor/TyrepressureSensor.hpp"
+#include "lib/sensor/TyrepressureSensorNormalTyre.hpp"
 #include "lib/safetyRange/SafetyRangeNormalTyre.hpp"
 
 class Alarm
 {
 public:
-    Alarm(TyrepressureSensor* sensor, SafetyRangeNormalTyre* safetyRange);
+    Alarm(TyrepressureSensorNormalTyre* sensor, SafetyRangeNormalTyre* safetyRange);
 
     void check();
     bool isAlarmOn();
 
 protected:
-    TyrepressureSensor* m_sensor;
+    TyrepressureSensorNormalTyre* m_sensor;
     SafetyRangeNormalTyre* m_safetyRange;
     bool m_alarmOn;
 

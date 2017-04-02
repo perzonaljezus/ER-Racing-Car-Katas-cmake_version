@@ -327,32 +327,32 @@ Sensor.cpp.s:
 	$(MAKE) -f CMakeFiles/tyrepressure.dir/build.make CMakeFiles/tyrepressure.dir/Sensor.cpp.s
 .PHONY : Sensor.cpp.s
 
-TyrepressureSensor.o: TyrepressureSensor.cpp.o
+TyrepressureSensorNormalTyre.o: TyrepressureSensorNormalTyre.cpp.o
 
-.PHONY : TyrepressureSensor.o
+.PHONY : TyrepressureSensorNormalTyre.o
 
 # target to build an object file
-TyrepressureSensor.cpp.o:
-	$(MAKE) -f CMakeFiles/tyrepressure.dir/build.make CMakeFiles/tyrepressure.dir/TyrepressureSensor.cpp.o
-.PHONY : TyrepressureSensor.cpp.o
+TyrepressureSensorNormalTyre.cpp.o:
+	$(MAKE) -f CMakeFiles/tyrepressure.dir/build.make CMakeFiles/tyrepressure.dir/TyrepressureSensorNormalTyre.cpp.o
+.PHONY : TyrepressureSensorNormalTyre.cpp.o
 
-TyrepressureSensor.i: TyrepressureSensor.cpp.i
+TyrepressureSensorNormalTyre.i: TyrepressureSensorNormalTyre.cpp.i
 
-.PHONY : TyrepressureSensor.i
+.PHONY : TyrepressureSensorNormalTyre.i
 
 # target to preprocess a source file
-TyrepressureSensor.cpp.i:
-	$(MAKE) -f CMakeFiles/tyrepressure.dir/build.make CMakeFiles/tyrepressure.dir/TyrepressureSensor.cpp.i
-.PHONY : TyrepressureSensor.cpp.i
+TyrepressureSensorNormalTyre.cpp.i:
+	$(MAKE) -f CMakeFiles/tyrepressure.dir/build.make CMakeFiles/tyrepressure.dir/TyrepressureSensorNormalTyre.cpp.i
+.PHONY : TyrepressureSensorNormalTyre.cpp.i
 
-TyrepressureSensor.s: TyrepressureSensor.cpp.s
+TyrepressureSensorNormalTyre.s: TyrepressureSensorNormalTyre.cpp.s
 
-.PHONY : TyrepressureSensor.s
+.PHONY : TyrepressureSensorNormalTyre.s
 
 # target to generate assembly for a file
-TyrepressureSensor.cpp.s:
-	$(MAKE) -f CMakeFiles/tyrepressure.dir/build.make CMakeFiles/tyrepressure.dir/TyrepressureSensor.cpp.s
-.PHONY : TyrepressureSensor.cpp.s
+TyrepressureSensorNormalTyre.cpp.s:
+	$(MAKE) -f CMakeFiles/tyrepressure.dir/build.make CMakeFiles/tyrepressure.dir/TyrepressureSensorNormalTyre.cpp.s
+.PHONY : TyrepressureSensorNormalTyre.cpp.s
 
 TyrepressureSensorStub.o: TyrepressureSensorStub.cpp.o
 
@@ -410,9 +410,9 @@ help:
 	@echo "... Sensor.o"
 	@echo "... Sensor.i"
 	@echo "... Sensor.s"
-	@echo "... TyrepressureSensor.o"
-	@echo "... TyrepressureSensor.i"
-	@echo "... TyrepressureSensor.s"
+	@echo "... TyrepressureSensorNormalTyre.o"
+	@echo "... TyrepressureSensorNormalTyre.i"
+	@echo "... TyrepressureSensorNormalTyre.s"
 	@echo "... TyrepressureSensorStub.o"
 	@echo "... TyrepressureSensorStub.i"
 	@echo "... TyrepressureSensorStub.s"

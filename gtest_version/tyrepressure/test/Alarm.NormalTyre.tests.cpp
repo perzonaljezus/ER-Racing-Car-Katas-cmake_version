@@ -1,6 +1,6 @@
 #include "../Alarm.hpp"
-#include "TyrepressureSensorStub.hpp"
-#include "AlarmBuilder.hpp"
+#include "AlarmBuilderNormalTyre.hpp"
+#include "TyrepressureSensorWetTyreStub.hpp"
 
 using ::testing::Return;
 
@@ -8,12 +8,12 @@ TEST(Alarm, testAlarmIsOffWhenPressureIsOk)
 {
     double pressure = 19; // (high + low) 2
 
-    TyrepressureSensorStub sensor;
+    TyrepressureSensorWetTyreStub sensor;
     EXPECT_CALL(sensor, pressureValue()) .WillOnce(Return(pressure));
 
     SafetyRangeNormalTyre safetyRange(17., 21.);
 
-    Alarm* alarm = AlarmBuilder::anAlarm()->
+    Alarm* alarm = AlarmBuilderNormalTyre::anAlarm()->
             usingSensor(&sensor)->
             andWithSafetyRange(&safetyRange)->
             build();
@@ -28,7 +28,7 @@ TEST(Alarm, testAlarmIsOnWhenPressureIsTooHigh)
 {
     double pressure = 22; // high+1
 
-    TyrepressureSensorStub sensor;
+    TyrepressureSensorWetTyreStub sensor;
     EXPECT_CALL(sensor, pressureValue()) .WillOnce(Return(pressure));
 
     SafetyRangeNormalTyre safetyRange(17., 21.);
@@ -41,7 +41,7 @@ TEST(Alarm, testAlarmIsOnWhenPressureIsTooLow)
 {
     double pressure = 16; // low-1
 
-    TyrepressureSensorStub sensor;
+    TyrepressureSensorWetTyreStub sensor;
     EXPECT_CALL(sensor, pressureValue()) .WillOnce(Return(pressure));
 
     SafetyRangeNormalTyre safetyRange(17., 21.);
@@ -54,7 +54,7 @@ TEST(Alarm, testAlarmIsOffWhenPressureIsOnHighLimit)
 {
     double pressure = 21; // high
 
-    TyrepressureSensorStub sensor;
+    TyrepressureSensorWetTyreStub sensor;
     EXPECT_CALL(sensor, pressureValue()) .WillOnce(Return(pressure));
 
     SafetyRangeNormalTyre safetyRange(17., 21.);
@@ -67,7 +67,7 @@ TEST(Alarm, testAlarmIsOffWhenPressureIsOnLowLimit)
 {
     double pressure = 17; // low
 
-    TyrepressureSensorStub sensor;
+    TyrepressureSensorWetTyreStub sensor;
     EXPECT_CALL(sensor, pressureValue()) .WillOnce(Return(pressure));
 
     SafetyRangeNormalTyre safetyRange(17., 21.);
