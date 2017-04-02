@@ -17,7 +17,7 @@ protected:
     ISensor* m_sensor;
     bool m_alarmOn;
 
-    virtual double pressureValue();
+    virtual double probe();
 
 };
 
