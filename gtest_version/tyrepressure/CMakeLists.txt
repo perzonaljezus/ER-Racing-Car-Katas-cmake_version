@@ -4,12 +4,14 @@ project(tyrepressure)
 set(CMAKE_CXX_STANDARD 11)
 
 set(SOURCE_FILES
-        test/Alarm.tests.cpp
+        test/Alarm.NormalTyre.tests.cpp
+        test/Alarm.WetTyre.tests.cpp
         Alarm.cpp
         Alarm.hpp
         lib/sensor/legacy/Sensor.cpp
         lib/sensor/legacy/Sensor.hpp
         test/TyrepressureSensorStub.hpp
+        test/TyrepressureSensorWetTyreStub.hpp
         lib/sensor/TyrepressureSensor.cpp
         lib/sensor/TyrepressureSensor.hpp
         lib/sensor/TyrepressureSensorWetTyre.cpp
