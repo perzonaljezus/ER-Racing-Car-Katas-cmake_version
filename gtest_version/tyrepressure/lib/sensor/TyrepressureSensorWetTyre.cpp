@@ -2,7 +2,7 @@
 #include <cstdlib>
 #include "TyrepressureSensorWetTyre.hpp"
 
-double TyrepressureSensorWetTyre::pressureValue() {
+double TyrepressureSensorWetTyre::probe() {
     // placeholder implementation that simulates a real sensor
     // in a real tire
     float randMax = RAND_MAX;

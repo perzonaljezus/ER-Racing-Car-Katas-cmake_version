@@ -1,8 +1,11 @@
 
 #include "Alarm.hpp"
+#include "lib/sensor/ISensor.hpp"
+#include "lib/sensor/TyrepressureSensorWetTyre.hpp"
+#include "lib/safetyRange/SafetyRangeWetTyre.hpp"
 
 
-Alarm::Alarm(TyrepressureSensorNormalTyre *sensor, SafetyRangeNormalTyre* safetyRange) : m_sensor(sensor), m_safetyRange(safetyRange), m_alarmOn(false)
+Alarm::Alarm(TyrepressureSensorWetTyre *sensor, SafetyRangeWetTyre *safetyRange) : m_sensor(sensor), m_safetyRange(safetyRange), m_alarmOn(false)
 {}
 
 void Alarm::check()
@@ -22,7 +25,7 @@ bool Alarm::isInRange(double pressureValue) const {
 
 double Alarm::pressureValue()
 {
-    return m_sensor->pressureValue();
+    return m_sensor->probe();
 }
 
 bool Alarm::isAlarmOn()

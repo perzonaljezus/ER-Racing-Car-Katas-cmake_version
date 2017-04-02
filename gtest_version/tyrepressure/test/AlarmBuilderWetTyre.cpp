@@ -5,13 +5,13 @@ AlarmBuilderWetTyre* AlarmBuilderWetTyre::anAlarm() {
     return new AlarmBuilderWetTyre();
 }
 
-AlarmBuilderWetTyre* AlarmBuilderWetTyre::usingSensor(TyrepressureSensorNormalTyre* sensor) {
+AlarmBuilderWetTyre* AlarmBuilderWetTyre::usingSensor(TyrepressureSensorWetTyre* sensor) {
     m_sensor = sensor;
 
     return this;
 }
 
-AlarmBuilderWetTyre* AlarmBuilderWetTyre::andWithSafetyRange(SafetyRangeNormalTyre* safetyRange) {
+AlarmBuilderWetTyre* AlarmBuilderWetTyre::andWithSafetyRange(SafetyRangeWetTyre* safetyRange) {
     m_safetyRange = safetyRange;
 
     return this;

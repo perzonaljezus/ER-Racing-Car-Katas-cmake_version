@@ -354,32 +354,32 @@ TyrepressureSensorNormalTyre.cpp.s:
 	$(MAKE) -f CMakeFiles/tyrepressure.dir/build.make CMakeFiles/tyrepressure.dir/TyrepressureSensorNormalTyre.cpp.s
 .PHONY : TyrepressureSensorNormalTyre.cpp.s
 
-TyrepressureSensorStub.o: TyrepressureSensorStub.cpp.o
+TyrepressureSensorNormalTyreStub.o: TyrepressureSensorNormalTyreStub.cpp.o
 
-.PHONY : TyrepressureSensorStub.o
+.PHONY : TyrepressureSensorNormalTyreStub.o
 
 # target to build an object file
-TyrepressureSensorStub.cpp.o:
-	$(MAKE) -f CMakeFiles/tyrepressure.dir/build.make CMakeFiles/tyrepressure.dir/TyrepressureSensorStub.cpp.o
-.PHONY : TyrepressureSensorStub.cpp.o
+TyrepressureSensorNormalTyreStub.cpp.o:
+	$(MAKE) -f CMakeFiles/tyrepressure.dir/build.make CMakeFiles/tyrepressure.dir/TyrepressureSensorNormalTyreStub.cpp.o
+.PHONY : TyrepressureSensorNormalTyreStub.cpp.o
 
-TyrepressureSensorStub.i: TyrepressureSensorStub.cpp.i
+TyrepressureSensorNormalTyreStub.i: TyrepressureSensorNormalTyreStub.cpp.i
 
-.PHONY : TyrepressureSensorStub.i
+.PHONY : TyrepressureSensorNormalTyreStub.i
 
 # target to preprocess a source file
-TyrepressureSensorStub.cpp.i:
-	$(MAKE) -f CMakeFiles/tyrepressure.dir/build.make CMakeFiles/tyrepressure.dir/TyrepressureSensorStub.cpp.i
-.PHONY : TyrepressureSensorStub.cpp.i
+TyrepressureSensorNormalTyreStub.cpp.i:
+	$(MAKE) -f CMakeFiles/tyrepressure.dir/build.make CMakeFiles/tyrepressure.dir/TyrepressureSensorNormalTyreStub.cpp.i
+.PHONY : TyrepressureSensorNormalTyreStub.cpp.i
 
-TyrepressureSensorStub.s: TyrepressureSensorStub.cpp.s
+TyrepressureSensorNormalTyreStub.s: TyrepressureSensorNormalTyreStub.cpp.s
 
-.PHONY : TyrepressureSensorStub.s
+.PHONY : TyrepressureSensorNormalTyreStub.s
 
 # target to generate assembly for a file
-TyrepressureSensorStub.cpp.s:
-	$(MAKE) -f CMakeFiles/tyrepressure.dir/build.make CMakeFiles/tyrepressure.dir/TyrepressureSensorStub.cpp.s
-.PHONY : TyrepressureSensorStub.cpp.s
+TyrepressureSensorNormalTyreStub.cpp.s:
+	$(MAKE) -f CMakeFiles/tyrepressure.dir/build.make CMakeFiles/tyrepressure.dir/TyrepressureSensorNormalTyreStub.cpp.s
+.PHONY : TyrepressureSensorNormalTyreStub.cpp.s
 
 # Help Target
 help:
@@ -413,9 +413,9 @@ help:
 	@echo "... TyrepressureSensorNormalTyre.o"
 	@echo "... TyrepressureSensorNormalTyre.i"
 	@echo "... TyrepressureSensorNormalTyre.s"
-	@echo "... TyrepressureSensorStub.o"
-	@echo "... TyrepressureSensorStub.i"
-	@echo "... TyrepressureSensorStub.s"
+	@echo "... TyrepressureSensorNormalTyreStub.o"
+	@echo "... TyrepressureSensorNormalTyreStub.i"
+	@echo "... TyrepressureSensorNormalTyreStub.s"
 .PHONY : help
 
 

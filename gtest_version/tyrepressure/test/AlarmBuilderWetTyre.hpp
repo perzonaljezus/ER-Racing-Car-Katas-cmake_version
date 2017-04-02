@@ -11,15 +11,15 @@ class AlarmBuilderWetTyre {
 public:
     static AlarmBuilderWetTyre* anAlarm();
 
-    AlarmBuilderWetTyre* usingSensor(TyrepressureSensorNormalTyre* sensor);
+    AlarmBuilderWetTyre* usingSensor(TyrepressureSensorWetTyre* sensor);
 
-    AlarmBuilderWetTyre* andWithSafetyRange(SafetyRangeNormalTyre* safetyRange);
+    AlarmBuilderWetTyre* andWithSafetyRange(SafetyRangeWetTyre* safetyRange);
 
     Alarm* build();
 
 protected:
-    TyrepressureSensorNormalTyre* m_sensor;
-    SafetyRangeNormalTyre* m_safetyRange;
+    TyrepressureSensorWetTyre* m_sensor;
+    SafetyRangeWetTyre* m_safetyRange;
 };
 
 

@@ -3,11 +3,13 @@
 
 #include "lib/sensor/TyrepressureSensorNormalTyre.hpp"
 #include "lib/safetyRange/SafetyRangeNormalTyre.hpp"
+#include "lib/sensor/TyrepressureSensorWetTyre.hpp"
+#include "lib/safetyRange/SafetyRangeWetTyre.hpp"
 
 class Alarm
 {
 public:
-    Alarm(TyrepressureSensorNormalTyre* sensor, SafetyRangeNormalTyre* safetyRange);
+    Alarm(TyrepressureSensorWetTyre *sensor, SafetyRangeWetTyre *safetyRange);
 
     void check();
     bool isAlarmOn();

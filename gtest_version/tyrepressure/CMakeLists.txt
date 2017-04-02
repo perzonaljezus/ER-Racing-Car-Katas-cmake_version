@@ -10,13 +10,14 @@ set(SOURCE_FILES
         Alarm.hpp
         lib/sensor/legacy/Sensor.cpp
         lib/sensor/legacy/Sensor.hpp
-        test/TyrepressureSensorStub.hpp
-        test/TyrepressureSensorWetTyreStub.hpp
+        lib/sensor/ISensor.hpp
         lib/sensor/TyrepressureSensorNormalTyre.cpp
         lib/sensor/TyrepressureSensorNormalTyre.hpp
         lib/sensor/TyrepressureSensorWetTyre.cpp
         lib/sensor/TyrepressureSensorWetTyre.hpp
         lib/safetyRange/SafetyRangeNormalTyre.cpp
+        test/TyrepressureSensorNormalTyreStub.hpp
+        test/TyrepressureSensorWetTyreStub.hpp
         lib/safetyRange/SafetyRangeNormalTyre.hpp
         lib/safetyRange/SafetyRangeWetTyre.cpp
         lib/safetyRange/SafetyRangeWetTyre.hpp

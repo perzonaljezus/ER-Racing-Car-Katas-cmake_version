@@ -10,7 +10,7 @@ TEST(Alarm, testWetTyreeAlarmIsOffWhenPressureIsOk)
     double pressure = 19; // (high + low) 2
 
     TyrepressureSensorWetTyreStub sensor;
-    EXPECT_CALL(sensor, pressureValue()) .WillOnce(Return(pressure));
+    EXPECT_CALL(sensor, probe()) .WillOnce(Return(pressure));
 
     SafetyRangeWetTyre safetyRange(15. , 25.);
 
@@ -30,7 +30,7 @@ TEST(Alarm, testWetTyreeAlarmIsOnWhenPressureIsTooHigh)
     double pressure = 26. ; // high+1
 
     TyrepressureSensorWetTyreStub sensor;
-    EXPECT_CALL(sensor, pressureValue()) .WillOnce(Return(pressure));
+    EXPECT_CALL(sensor, probe()) .WillOnce(Return(pressure));
 
     SafetyRangeWetTyre safetyRange(15. , 25.);
     Alarm *alarm = new Alarm(&sensor, &safetyRange);
@@ -43,7 +43,7 @@ TEST(Alarm, testWetTyreeAlarmIsOnWhenPressureIsTooLow)
     double pressure = 14. ; // low-1
 
     TyrepressureSensorWetTyreStub sensor;
-    EXPECT_CALL(sensor, pressureValue()) .WillOnce(Return(pressure));
+    EXPECT_CALL(sensor, probe()) .WillOnce(Return(pressure));
 
     SafetyRangeWetTyre safetyRange(15. , 25.);
     Alarm *alarm = new Alarm(&sensor, &safetyRange);
@@ -56,7 +56,7 @@ TEST(Alarm, testWetTyreeAlarmIsOffWhenPressureIsOnHighLimit)
     double pressure = 25. ; // high
 
     TyrepressureSensorWetTyreStub sensor;
-    EXPECT_CALL(sensor, pressureValue()) .WillOnce(Return(pressure));
+    EXPECT_CALL(sensor, probe()) .WillOnce(Return(pressure));
 
     SafetyRangeWetTyre safetyRange(15. , 25.);
     Alarm *alarm = new Alarm(&sensor, &safetyRange);
@@ -69,7 +69,7 @@ TEST(Alarm, testWetTyreeAlarmIsOffWhenPressureIsOnLowLimit)
     double pressure = 15. ; // low
 
     TyrepressureSensorWetTyreStub sensor;
-    EXPECT_CALL(sensor, pressureValue()) .WillOnce(Return(pressure));
+    EXPECT_CALL(sensor, probe()) .WillOnce(Return(pressure));
 
     SafetyRangeWetTyre safetyRange(15. , 25.);
     Alarm *alarm = new Alarm(&sensor, &safetyRange);

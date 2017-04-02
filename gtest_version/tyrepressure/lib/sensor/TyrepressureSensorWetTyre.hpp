@@ -2,14 +2,14 @@
 #ifndef TYREPRESSURE_TYREPRESSURESENSORWETTYRE_HPP
 #define TYREPRESSURE_TYREPRESSURESENSORWETTYRE_HPP
 
-#include "legacy/Sensor.hpp"
+#include "ISensor.hpp"
 
-class TyrepressureSensorWetTyre : public Sensor {
+class TyrepressureSensorWetTyre : public ISensor {
 public:
     TyrepressureSensorWetTyre();
     virtual ~TyrepressureSensorWetTyre() {}
 
-    virtual double pressureValue();
+    virtual double probe();
 };
 
 
