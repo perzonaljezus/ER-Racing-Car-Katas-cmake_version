@@ -5,7 +5,7 @@
 
 using ::testing::Return;
 
-TEST(Alarm, testAlarmNormalTyreIsOffWhenPressureIsOk)
+TEST(Alarm, testNormalTyreAlarmIsOffWhenPressureIsOk)
 {
     SafetyRangeNormalTyre safetyRange;
     double pressure = (safetyRange.getLowPressureTreshold() + safetyRange.getHighPressureTreshold() ) / 2. ;
@@ -24,7 +24,7 @@ TEST(Alarm, testAlarmNormalTyreIsOffWhenPressureIsOk)
 
 
 
-TEST(Alarm, testAlarmNormalTyreIsOnWhenPressureIsTooHigh)
+TEST(Alarm, testNormalTyreAlarmIsOnWhenPressureIsTooHigh)
 {
     SafetyRangeNormalTyre safetyRange;
     double pressure = safetyRange.getHighPressureTreshold() + 1;
@@ -37,7 +37,7 @@ TEST(Alarm, testAlarmNormalTyreIsOnWhenPressureIsTooHigh)
     EXPECT_TRUE(alarm->isAlarmOn());
 }
 
-TEST(Alarm, testAlarmNormalTyreIsOnWhenPressureIsTooLow)
+TEST(Alarm, testNormalTyreAlarmIsOnWhenPressureIsTooLow)
 {
     SafetyRangeNormalTyre safetyRange;
     double pressure = safetyRange.getLowPressureTreshold() - 1;
@@ -50,7 +50,7 @@ TEST(Alarm, testAlarmNormalTyreIsOnWhenPressureIsTooLow)
     EXPECT_TRUE(alarm->isAlarmOn());
 }
 
-TEST(Alarm, testAlarmNormalTyreIsOffWhenPressureIsOnHighLimit)
+TEST(Alarm, testNormalTyreAlarmIsOffWhenPressureIsOnHighLimit)
 {
     SafetyRangeNormalTyre safetyRange;
     double pressure = safetyRange.getHighPressureTreshold();
@@ -63,7 +63,7 @@ TEST(Alarm, testAlarmNormalTyreIsOffWhenPressureIsOnHighLimit)
     EXPECT_FALSE(alarm->isAlarmOn());
 }
 
-TEST(Alarm, testAlarmNormalTyreIsOffWhenPressureIsOnLowLimit)
+TEST(Alarm, testNormalTyreAlarmIsOffWhenPressureIsOnLowLimit)
 {
     SafetyRangeNormalTyre safetyRange;
     double pressure = safetyRange.getLowPressureTreshold();
