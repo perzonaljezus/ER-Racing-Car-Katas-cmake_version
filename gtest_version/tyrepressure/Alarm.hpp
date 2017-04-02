@@ -12,14 +12,13 @@ public:
     void check();
     bool isAlarmOn();
 
+    SafetyRange* m_safetyRange;
 protected:
     ISensor* m_sensor;
-    SafetyRange* m_safetyRange;
     bool m_alarmOn;
 
     virtual double pressureValue();
 
-    bool isInRange(double pressureValue) const;
 };
 
 #endif //TYREPRESSURE_ALARM_H

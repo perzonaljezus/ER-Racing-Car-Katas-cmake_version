@@ -15,6 +15,11 @@ public:
         return m_highPressureTreshold;
     }
 
+    bool isInRange(double pressureValue)  {
+        return this->getLowPressureTreshold() <= pressureValue
+               && pressureValue <= this->getHighPressureTreshold();
+    }
+
 protected:
     SafetyRange(double lowThreshold, double highThreshold) : m_lowPressureTreshold(lowThreshold), m_highPressureTreshold(highThreshold) {};
     double m_lowPressureTreshold;
