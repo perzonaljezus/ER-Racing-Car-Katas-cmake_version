@@ -26,7 +26,7 @@ TEST(Alarm, testWetTyreeAlarmIsOffWhenPressureIsOk)
 
 TEST(Alarm, testWetTyreeAlarmIsOnWhenPressureIsTooHigh)
 {
-    double pressure = 22; // high+1
+    double pressure = 26. ; // high+1
 
     TyrepressureSensorWetTyreStub sensor;
     EXPECT_CALL(sensor, pressureValue()) .WillOnce(Return(pressure));
@@ -39,7 +39,7 @@ TEST(Alarm, testWetTyreeAlarmIsOnWhenPressureIsTooHigh)
 
 TEST(Alarm, testWetTyreeAlarmIsOnWhenPressureIsTooLow)
 {
-    double pressure = 16; // low-1
+    double pressure = 14. ; // low-1
 
     TyrepressureSensorWetTyreStub sensor;
     EXPECT_CALL(sensor, pressureValue()) .WillOnce(Return(pressure));
@@ -52,7 +52,7 @@ TEST(Alarm, testWetTyreeAlarmIsOnWhenPressureIsTooLow)
 
 TEST(Alarm, testWetTyreeAlarmIsOffWhenPressureIsOnHighLimit)
 {
-    double pressure = 21; // high
+    double pressure = 25. ; // high
 
     TyrepressureSensorWetTyreStub sensor;
     EXPECT_CALL(sensor, pressureValue()) .WillOnce(Return(pressure));
@@ -65,7 +65,7 @@ TEST(Alarm, testWetTyreeAlarmIsOffWhenPressureIsOnHighLimit)
 
 TEST(Alarm, testWetTyreeAlarmIsOffWhenPressureIsOnLowLimit)
 {
-    double pressure = 17; // low
+    double pressure = 15. ; // low
 
     TyrepressureSensorWetTyreStub sensor;
     EXPECT_CALL(sensor, pressureValue()) .WillOnce(Return(pressure));
