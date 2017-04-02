@@ -5,7 +5,7 @@
 
 using ::testing::Return;
 
-TEST(Alarm, testWetTyreeAlarmIsOffWhenPressureIsOk)
+TEST(Alarm, testWetTyreAlarmIsOffWhenPressureIsOk)
 {
     SafetyRangeWetTyre safetyRange;
     double pressure = (safetyRange.getLowPressureTreshold() + safetyRange.getHighPressureTreshold() ) / 2. ;
@@ -25,7 +25,7 @@ TEST(Alarm, testWetTyreeAlarmIsOffWhenPressureIsOk)
 
 
 
-TEST(Alarm, testWetTyreeAlarmIsOnWhenPressureIsTooHigh)
+TEST(Alarm, testWetTyreAlarmIsOnWhenPressureIsTooHigh)
 {
     SafetyRangeWetTyre safetyRange;
     double pressure = safetyRange.getHighPressureTreshold() + 1;
@@ -38,7 +38,7 @@ TEST(Alarm, testWetTyreeAlarmIsOnWhenPressureIsTooHigh)
     EXPECT_TRUE(alarm->isAlarmOn());
 }
 
-TEST(Alarm, testWetTyreeAlarmIsOnWhenPressureIsTooLow)
+TEST(Alarm, testWetTyreAlarmIsOnWhenPressureIsTooLow)
 {
     SafetyRangeWetTyre safetyRange;
     double pressure = safetyRange.getLowPressureTreshold() - 1;
@@ -51,7 +51,7 @@ TEST(Alarm, testWetTyreeAlarmIsOnWhenPressureIsTooLow)
     EXPECT_TRUE(alarm->isAlarmOn());
 }
 
-TEST(Alarm, testWetTyreeAlarmIsOffWhenPressureIsOnHighLimit)
+TEST(Alarm, testWetTyreAlarmIsOffWhenPressureIsOnHighLimit)
 {
     SafetyRangeWetTyre safetyRange;
     double pressure = safetyRange.getHighPressureTreshold();
@@ -64,7 +64,7 @@ TEST(Alarm, testWetTyreeAlarmIsOffWhenPressureIsOnHighLimit)
     EXPECT_FALSE(alarm->isAlarmOn());
 }
 
-TEST(Alarm, testWetTyreeAlarmIsOffWhenPressureIsOnLowLimit)
+TEST(Alarm, testWetTyreAlarmIsOffWhenPressureIsOnLowLimit)
 {
     SafetyRangeWetTyre safetyRange;
     double pressure = safetyRange.getLowPressureTreshold();

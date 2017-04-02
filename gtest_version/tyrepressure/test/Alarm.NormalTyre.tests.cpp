@@ -1,11 +1,10 @@
 #include "../Alarm.hpp"
 #include "AlarmBuilderNormalTyre.hpp"
 #include "TyrepressureSensorNormalTyreStub.hpp"
-#include "../lib/safetyRange/SafetyRangeNormalTyre.hpp"
 
 using ::testing::Return;
 
-TEST(Alarm, testAlarmIsOffWhenPressureIsOk)
+TEST(Alarm, testAlarmNormalTyreIsOffWhenPressureIsOk)
 {
     SafetyRangeNormalTyre safetyRange;
     double pressure = (safetyRange.getLowPressureTreshold() + safetyRange.getHighPressureTreshold() ) / 2. ;
@@ -24,7 +23,7 @@ TEST(Alarm, testAlarmIsOffWhenPressureIsOk)
 
 
 
-TEST(Alarm, testAlarmIsOnWhenPressureIsTooHigh)
+TEST(Alarm, testAlarmNormalTyreIsOnWhenPressureIsTooHigh)
 {
     SafetyRangeNormalTyre safetyRange;
     double pressure = safetyRange.getHighPressureTreshold() + 1;
@@ -37,7 +36,7 @@ TEST(Alarm, testAlarmIsOnWhenPressureIsTooHigh)
     EXPECT_TRUE(alarm->isAlarmOn());
 }
 
-TEST(Alarm, testAlarmIsOnWhenPressureIsTooLow)
+TEST(Alarm, testAlarmNormalTyreIsOnWhenPressureIsTooLow)
 {
     SafetyRangeNormalTyre safetyRange;
     double pressure = safetyRange.getLowPressureTreshold() - 1;
@@ -50,7 +49,7 @@ TEST(Alarm, testAlarmIsOnWhenPressureIsTooLow)
     EXPECT_TRUE(alarm->isAlarmOn());
 }
 
-TEST(Alarm, testAlarmIsOffWhenPressureIsOnHighLimit)
+TEST(Alarm, testAlarmNormalTyreIsOffWhenPressureIsOnHighLimit)
 {
     SafetyRangeNormalTyre safetyRange;
     double pressure = safetyRange.getHighPressureTreshold();
@@ -63,7 +62,7 @@ TEST(Alarm, testAlarmIsOffWhenPressureIsOnHighLimit)
     EXPECT_FALSE(alarm->isAlarmOn());
 }
 
-TEST(Alarm, testAlarmIsOffWhenPressureIsOnLowLimit)
+TEST(Alarm, testAlarmNormalTyreIsOffWhenPressureIsOnLowLimit)
 {
     SafetyRangeNormalTyre safetyRange;
     double pressure = safetyRange.getLowPressureTreshold();
